@@ -6,7 +6,7 @@
 
 Wrappers for all NameSilo API calls.
 
-Some methods have been 'fluffed out' to be more idiomatic in JS land, some are simply generated wrappers around an POST request.
+Some methods have been 'fluffed out' to be more idiomatic in JS land, some are simply generated wrappers around a POST request.
 
 ### TODO
 - [x] Simplify calling of endpoints with single argument

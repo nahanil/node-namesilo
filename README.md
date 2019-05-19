@@ -6,7 +6,7 @@
 
 Wrappers for all NameSilo API calls.
 
-Some methods have been 'fluffed out' to be more idiomatic in JS land, some are simply generated wrappers around an POST request.
+Some methods have been 'fluffed out' to be more idiomatic in JS land, some are simply generated wrappers around a POST request.
 
 ### TODO
 - [x] Simplify calling of endpoints with single argument
@@ -38,6 +38,7 @@ You can pass either an API Key as the only parameter, or an object with more ver
 | options.apiKey | `Boolean`  | API Key | &nbsp; |
 | options.sandbox&#x3D;false | `Boolean`  | Use sandbox/testing API | *Optional* |
 | options.logger | `Function`  |  | *Optional* |
+| options.defaultPaymentId | `Function`  | Default `payment_id` to use for API calls that require one | *Optional* |
 
 
 
@@ -63,41 +64,6 @@ ns = new NameSilo({
 
 
 - `Void`
-
-
-
-#### listDomains() 
-
-Get a list of all active domains within your account.
-
-
-
-
-
-
-##### Examples
-
-```javascript
-let res = ns.listDomains()
-```
-```javascript
-// Output
-{
-  'code': 300,
-  'detail': 'success',
-  'domains': [
-    'namesilo.com',
-    'namesilo.net',
-    'namesilo.org'
-  ]
-}
-```
-
-
-##### Returns
-
-
-- `Promise`  API Reply
 
 
 
@@ -194,6 +160,41 @@ let res = await ns.changeNameServers({ domain: 'namesilo.com', ns1: 'ns1.namesil
 
 
 
+#### listDomains() 
+
+Get a list of all active domains within your account.
+
+
+
+
+
+
+##### Examples
+
+```javascript
+let res = ns.listDomains()
+```
+```javascript
+// Output
+{
+  'code': 300,
+  'detail': 'success',
+  'domains': [
+    'namesilo.com',
+    'namesilo.net',
+    'namesilo.org'
+  ]
+}
+```
+
+
+##### Returns
+
+
+- `Promise`  API Reply
+
+
+
 
 ### lib/xx_autogen.js
 
@@ -263,43 +264,6 @@ let res = await ns.registerDomainDrop({
   'code': 300,
   'detail': 'success',
   'message': 'Your domain registration was successfully processed.',
-  'domain': 'namesilo.com',
-  'order_amount': 7.77
-}
-```
-
-
-##### Returns
-
-
-- `Void`
-
-
-
-#### renewDomain() 
-
-[AUTO] Renew a Domain
-See: https://www.namesilo.com/api_reference.php#renewDomain
-
-
-
-
-
-
-##### Examples
-
-```javascript
-let res = await ns.renewDomain({
-  'domain': 'namesilo.com',
-  'years': '2'
-})
-```
-```javascript
-// Output
-{
-  'code': 300,
-  'detail': 'success',
-  'message': 'Your domain renewal was successfully processed.',
   'domain': 'namesilo.com',
   'order_amount': 7.77
 }
