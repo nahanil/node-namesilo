@@ -12,8 +12,13 @@ for (let action of Object.keys(actions)) {
   let jsdocParams = ''
 
   if (actions[action] && actions[action].singleParam && params[actions[action].singleParam]) {
-    jsdocParams = `\n * @param {*} ${actions[action].singleParam}`
-    strParams = params[actions[action].singleParam]
+    if (actions[action].flattenArrays) {
+      jsdocParams = `\n * @param {Array} ${actions[action].singleParam}`
+      strParams = "['" + params[actions[action].singleParam].replace(/,/g, "','") + "']"
+    } else {
+      jsdocParams = `\n * @param {*} ${actions[action].singleParam}`
+      strParams = "'" + params[actions[action].singleParam] + "'"
+    }
   }
   if (strParams === '{}') { strParams = '' }
 
