@@ -14,8 +14,11 @@ function getClient () {
   })
 }
 
-function getMockClient (fixture) {
-  let ns = new NameSilo({ apiKey: '123', sandbox: true })
+function getMockClient (fixture, options) {
+  options = options || {}
+  options.apiKey = options.apiKey || '123'
+  options.sandbox = typeof options.sandbox !== 'undefined' ? options.sandbox : true
+  let ns = new NameSilo(options)
 
   let mockPost = async (action, inputs, parser) => {
     let xml = await loadFixture(fixture)

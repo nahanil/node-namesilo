@@ -75,23 +75,6 @@ describe('NameSilo', () => {
     })
   })
 
-  describe(`listDomains`, () => {
-    it(`should flatten domains array`, async () => {
-      let ns = getMockClient(('listDomains'))
-      let data = await ns.listDomains()
-
-      expect(utils.isArray(data.domains)).toBe(true)
-      expect(utils.isString(data.domains[0])).toBe(true)
-    })
-
-    it(`should always return an array`, async () => {
-      let ns = getMockClient(('listDomains_2'))
-      let data = await ns.listDomains()
-
-      expect(utils.isArray(data.domains)).toBe(true)
-    })
-  })
-
   describe(`changeNameServers`, () => {
     it(`should accept an object { domain, ns1, ns2, ... } as first param`, async () => {
       let ns = getMockClient(('changeNameServers'))
@@ -125,6 +108,49 @@ describe('NameSilo', () => {
 
       expect(ns.post).toHaveBeenCalledTimes(1)
       expect(ns.post.mock.calls[0][1]).toEqual({ domains: 'example.com,example.net' })
+    })
+  })
+
+  describe(`renewDomain`, () => {
+    it(`should accept serial arguments`, async () => {
+      let ns = getMockClient(('renewDomain'))
+      await ns.renewDomain('example.com', 1)
+
+      expect(ns.post).toHaveBeenCalledTimes(1)
+      expect(ns.post.mock.calls[0][1]).toEqual({ domain: 'example.com', years: 1 })
+    })
+
+    it(`should accept serial arguments with optional args`, async () => {
+      let ns = getMockClient(('renewDomain'))
+      await ns.renewDomain('example.com', 1, { payment_id: 1234, coupon: 'abcd' })
+
+      expect(ns.post).toHaveBeenCalledTimes(1)
+      expect(ns.post.mock.calls[0][1]).toEqual({ domain: 'example.com', years: 1, payment_id: 1234, coupon: 'abcd' })
+    })
+
+    it(`should accept a single argument object`, async () => {
+      let ns = getMockClient(('renewDomain'))
+      await ns.renewDomain({ domain: 'example.com', years: 1 })
+
+      expect(ns.post).toHaveBeenCalledTimes(1)
+      expect(ns.post.mock.calls[0][1]).toEqual({ domain: 'example.com', years: 1 })
+    })
+  })
+
+  describe(`listDomains`, () => {
+    it(`should flatten domains array`, async () => {
+      let ns = getMockClient(('listDomains'))
+      let data = await ns.listDomains()
+
+      expect(utils.isArray(data.domains)).toBe(true)
+      expect(utils.isString(data.domains[0])).toBe(true)
+    })
+
+    it(`should always return an array`, async () => {
+      let ns = getMockClient(('listDomains_2'))
+      let data = await ns.listDomains()
+
+      expect(utils.isArray(data.domains)).toBe(true)
     })
   })
 
