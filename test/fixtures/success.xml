@@ -1,0 +1,10 @@
+<namesilo>
+    <request>
+        <operation>OPERATION</operation> 
+        <ip>YOUR IP</ip> 
+    </request>
+    <reply>
+        <code>300</code> 
+        <detail>success</detail>            
+    </reply>
+</namesilo>

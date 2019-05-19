@@ -1,0 +1,32 @@
+{
+  "name": "@nahanil/namesilo",
+  "version": "0.0.1",
+  "description": "Interact with the NameSilo API",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "dev": "jest --watch",
+    "coverage": "jest --coverage",
+    "doc": "node ./.namesilo/doc.js && jsdoc index.js lib --ignore ./lib/utils.js",
+    "readme": "node ./.namesilo/doc.js && cat .namesilo/README.md > README.md && doxdox -l markdown ./lib -i lib/utils.js >> README.md"
+  },
+  "author": "",
+  "license": "ISC",
+ "dependencies": {
+    "axios": "^0.18.0",
+    "xml2json": "^0.11.2"
+  },
+  "devDependencies": {
+    "doxdox": "^3.0.0",
+    "jest": "^24.8.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/texh/node-namesilo.git"
+  },
+  "bugs": {
+    "url": "https://github.com/texh/node-namesilo/issues"
+  },
+  "homepage": "https://github.com/texh/node-namesilo",
+  "author": "Jarrod Linahan"
+}

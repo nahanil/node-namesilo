@@ -1,0 +1,6 @@
+node_modules
+coverage
+doc
+lib/xx_autogen.js
+nohup.out
+package-lock.json

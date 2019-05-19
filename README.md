@@ -1,9 +1,4 @@
-# NameSilo
-lalala
-lalala
-
-
-# namesilo *0.0.1*
+# @nahanil/namesilo *0.0.1*
 
 > Interact with the NameSilo API
 
@@ -152,7 +147,7 @@ let res = await ns.checkRegisterAvailability(['namesilo.com' , 'namesilo.net' , 
 #### registerDomain(options) 
 
 [AUTO] Register a Domain
-See: https://www.namesilo.com/api_reference.php#registerDomain">https://www.namesilo.com/api_reference.php#registerDomain
+See: https://www.namesilo.com/api_reference.php#registerDomain
 
 
 
@@ -202,7 +197,7 @@ let res = ns.registerDomain({
 #### registerDomainDrop(options) 
 
 [AUTO] Register a Domain using Drop-Catching
-See: https://www.namesilo.com/api_reference.php#registerDomainDrop">https://www.namesilo.com/api_reference.php#registerDomainDrop
+See: https://www.namesilo.com/api_reference.php#registerDomainDrop
 
 
 
@@ -252,7 +247,7 @@ let res = ns.registerDomainDrop({
 #### renewDomain(options) 
 
 [AUTO] Renew a Domain
-See: https://www.namesilo.com/api_reference.php#renewDomain">https://www.namesilo.com/api_reference.php#renewDomain
+See: https://www.namesilo.com/api_reference.php#renewDomain
 
 
 
@@ -298,7 +293,7 @@ let res = ns.renewDomain({
 #### transferDomain(options) 
 
 [AUTO] Transfer a Domain
-See: https://www.namesilo.com/api_reference.php#transferDomain">https://www.namesilo.com/api_reference.php#transferDomain
+See: https://www.namesilo.com/api_reference.php#transferDomain
 
 
 
@@ -348,7 +343,7 @@ let res = ns.transferDomain({
 #### checkTransferStatus(options) 
 
 [AUTO] Check Transfer Status
-See: https://www.namesilo.com/api_reference.php#checkTransferStatus">https://www.namesilo.com/api_reference.php#checkTransferStatus
+See: https://www.namesilo.com/api_reference.php#checkTransferStatus
 
 
 
@@ -392,7 +387,7 @@ let res = ns.checkTransferStatus({
 #### transferUpdateChangeEPPCode(options) 
 
 [AUTO] Transfer Update (Add/Change EPP Code)
-See: https://www.namesilo.com/api_reference.php#transferUpdateChangeEPPCode">https://www.namesilo.com/api_reference.php#transferUpdateChangeEPPCode
+See: https://www.namesilo.com/api_reference.php#transferUpdateChangeEPPCode
 
 
 
@@ -435,7 +430,7 @@ let res = ns.transferUpdateChangeEPPCode({
 #### transferUpdateResendAdminEmail(options) 
 
 [AUTO] Transfer Update (Re-Send Administrative Email Verification)
-See: https://www.namesilo.com/api_reference.php#transferUpdateResendAdminEmail">https://www.namesilo.com/api_reference.php#transferUpdateResendAdminEmail
+See: https://www.namesilo.com/api_reference.php#transferUpdateResendAdminEmail
 
 
 
@@ -476,7 +471,7 @@ let res = ns.transferUpdateResendAdminEmail({
 #### transferUpdateResubmitToRegistry(options) 
 
 [AUTO] Transfer Update (Re-Submit a transfer to the registry)
-See: https://www.namesilo.com/api_reference.php#transferUpdateResubmitToRegistry">https://www.namesilo.com/api_reference.php#transferUpdateResubmitToRegistry
+See: https://www.namesilo.com/api_reference.php#transferUpdateResubmitToRegistry
 
 
 
@@ -517,7 +512,7 @@ let res = ns.transferUpdateResubmitToRegistry({
 #### checkTransferAvailability(options) 
 
 [AUTO] Check Availability of Domain Transfer
-See: https://www.namesilo.com/api_reference.php#checkTransferAvailability">https://www.namesilo.com/api_reference.php#checkTransferAvailability
+See: https://www.namesilo.com/api_reference.php#checkTransferAvailability
 
 
 
@@ -576,7 +571,7 @@ let res = ns.checkTransferAvailability({
 #### getDomainInfo(options) 
 
 [AUTO] Get Domain Information
-See: https://www.namesilo.com/api_reference.php#getDomainInfo">https://www.namesilo.com/api_reference.php#getDomainInfo
+See: https://www.namesilo.com/api_reference.php#getDomainInfo
 
 
 
@@ -638,7 +633,7 @@ let res = ns.getDomainInfo({
 #### contactList(options) 
 
 [AUTO] View contact profiles
-See: https://www.namesilo.com/api_reference.php#contactList">https://www.namesilo.com/api_reference.php#contactList
+See: https://www.namesilo.com/api_reference.php#contactList
 
 
 
@@ -724,7 +719,7 @@ let res = ns.contactList({})
 #### contactAdd(options) 
 
 [AUTO] Add a contact profile
-See: https://www.namesilo.com/api_reference.php#contactAdd">https://www.namesilo.com/api_reference.php#contactAdd
+See: https://www.namesilo.com/api_reference.php#contactAdd
 
 
 
@@ -782,7 +777,7 @@ let res = ns.contactAdd({
 #### contactUpdate(options) 
 
 [AUTO] Update a contact profile
-See: https://www.namesilo.com/api_reference.php#contactUpdate">https://www.namesilo.com/api_reference.php#contactUpdate
+See: https://www.namesilo.com/api_reference.php#contactUpdate
 
 
 
@@ -841,7 +836,7 @@ let res = ns.contactUpdate({
 #### contactDelete(options) 
 
 [AUTO] Delete a contact profile
-See: https://www.namesilo.com/api_reference.php#contactDelete">https://www.namesilo.com/api_reference.php#contactDelete
+See: https://www.namesilo.com/api_reference.php#contactDelete
 
 
 
@@ -882,7 +877,7 @@ let res = ns.contactDelete({
 #### contactDomainAssociate(options) 
 
 [AUTO] Associate a contact profile with a domain
-See: https://www.namesilo.com/api_reference.php#contactDomainAssociate">https://www.namesilo.com/api_reference.php#contactDomainAssociate
+See: https://www.namesilo.com/api_reference.php#contactDomainAssociate
 
 
 
@@ -927,7 +922,7 @@ let res = ns.contactDomainAssociate({
 #### changeNameServers(options) 
 
 [AUTO] Change NameServers
-See: https://www.namesilo.com/api_reference.php#changeNameServers">https://www.namesilo.com/api_reference.php#changeNameServers
+See: https://www.namesilo.com/api_reference.php#changeNameServers
 
 
 
@@ -972,7 +967,7 @@ let res = ns.changeNameServers({
 #### dnsListRecords(options) 
 
 [AUTO] List Current DNS Records
-See: https://www.namesilo.com/api_reference.php#dnsListRecords">https://www.namesilo.com/api_reference.php#dnsListRecords
+See: https://www.namesilo.com/api_reference.php#dnsListRecords
 
 
 
@@ -1047,7 +1042,7 @@ let res = ns.dnsListRecords({
 #### dnsAddRecord(options) 
 
 [AUTO] Add DNS Records
-See: https://www.namesilo.com/api_reference.php#dnsAddRecord">https://www.namesilo.com/api_reference.php#dnsAddRecord
+See: https://www.namesilo.com/api_reference.php#dnsAddRecord
 
 
 
@@ -1097,7 +1092,7 @@ let res = ns.dnsAddRecord({
 #### dnsUpdateRecord(options) 
 
 [AUTO] Update DNS Records
-See: https://www.namesilo.com/api_reference.php#dnsUpdateRecord">https://www.namesilo.com/api_reference.php#dnsUpdateRecord
+See: https://www.namesilo.com/api_reference.php#dnsUpdateRecord
 
 
 
@@ -1147,7 +1142,7 @@ let res = ns.dnsUpdateRecord({
 #### dnsDeleteRecord(options) 
 
 [AUTO] Delete DNS Records
-See: https://www.namesilo.com/api_reference.php#dnsDeleteRecord">https://www.namesilo.com/api_reference.php#dnsDeleteRecord
+See: https://www.namesilo.com/api_reference.php#dnsDeleteRecord
 
 
 
@@ -1190,7 +1185,7 @@ let res = ns.dnsDeleteRecord({
 #### dnsSecListRecords(options) 
 
 [AUTO] List Current DS (DNSSEC) Records
-See: https://www.namesilo.com/api_reference.php#dnsSecListRecords">https://www.namesilo.com/api_reference.php#dnsSecListRecords
+See: https://www.namesilo.com/api_reference.php#dnsSecListRecords
 
 
 
@@ -1245,7 +1240,7 @@ let res = ns.dnsSecListRecords({
 #### dnsSecAddRecord(options) 
 
 [AUTO] Add a DS record (DNSSEC) to your domain
-See: https://www.namesilo.com/api_reference.php#dnsSecAddRecord">https://www.namesilo.com/api_reference.php#dnsSecAddRecord
+See: https://www.namesilo.com/api_reference.php#dnsSecAddRecord
 
 
 
@@ -1294,7 +1289,7 @@ let res = ns.dnsSecAddRecord({
 #### dnsSecDeleteRecord(options) 
 
 [AUTO] Delete a DS record (DNSSEC) from your domain
-See: https://www.namesilo.com/api_reference.php#dnsSecDeleteRecord">https://www.namesilo.com/api_reference.php#dnsSecDeleteRecord
+See: https://www.namesilo.com/api_reference.php#dnsSecDeleteRecord
 
 
 
@@ -1343,7 +1338,7 @@ let res = ns.dnsSecDeleteRecord({
 #### portfolioList(options) 
 
 [AUTO] View active portfolios
-See: https://www.namesilo.com/api_reference.php#portfolioList">https://www.namesilo.com/api_reference.php#portfolioList
+See: https://www.namesilo.com/api_reference.php#portfolioList
 
 
 
@@ -1387,7 +1382,7 @@ let res = ns.portfolioList({})
 #### portfolioAdd(options) 
 
 [AUTO] Add a portfolio
-See: https://www.namesilo.com/api_reference.php#portfolioAdd">https://www.namesilo.com/api_reference.php#portfolioAdd
+See: https://www.namesilo.com/api_reference.php#portfolioAdd
 
 
 
@@ -1428,7 +1423,7 @@ let res = ns.portfolioAdd({
 #### portfolioDelete(options) 
 
 [AUTO] Delete a portfolio
-See: https://www.namesilo.com/api_reference.php#portfolioDelete">https://www.namesilo.com/api_reference.php#portfolioDelete
+See: https://www.namesilo.com/api_reference.php#portfolioDelete
 
 
 
@@ -1469,7 +1464,7 @@ let res = ns.portfolioDelete({
 #### portfolioDomainAssociate(options) 
 
 [AUTO] Assign a domain to a portfolio
-See: https://www.namesilo.com/api_reference.php#portfolioDomainAssociate">https://www.namesilo.com/api_reference.php#portfolioDomainAssociate
+See: https://www.namesilo.com/api_reference.php#portfolioDomainAssociate
 
 
 
@@ -1513,7 +1508,7 @@ let res = ns.portfolioDomainAssociate({
 #### listRegisteredNameServers(options) 
 
 [AUTO] List Registered NameServers
-See: https://www.namesilo.com/api_reference.php#listRegisteredNameServers">https://www.namesilo.com/api_reference.php#listRegisteredNameServers
+See: https://www.namesilo.com/api_reference.php#listRegisteredNameServers
 
 
 
@@ -1569,7 +1564,7 @@ let res = ns.listRegisteredNameServers({
 #### addRegisteredNameServer(options) 
 
 [AUTO] Add a Registered NameServer
-See: https://www.namesilo.com/api_reference.php#addRegisteredNameServer">https://www.namesilo.com/api_reference.php#addRegisteredNameServer
+See: https://www.namesilo.com/api_reference.php#addRegisteredNameServer
 
 
 
@@ -1616,7 +1611,7 @@ let res = ns.addRegisteredNameServer({
 #### modifyRegisteredNameServer(options) 
 
 [AUTO] Modify a Registered NameServer
-See: https://www.namesilo.com/api_reference.php#modifyRegisteredNameServer">https://www.namesilo.com/api_reference.php#modifyRegisteredNameServer
+See: https://www.namesilo.com/api_reference.php#modifyRegisteredNameServer
 
 
 
@@ -1665,7 +1660,7 @@ let res = ns.modifyRegisteredNameServer({
 #### deleteRegisteredNameServer(options) 
 
 [AUTO] Delete a Registered NameServer
-See: https://www.namesilo.com/api_reference.php#deleteRegisteredNameServer">https://www.namesilo.com/api_reference.php#deleteRegisteredNameServer
+See: https://www.namesilo.com/api_reference.php#deleteRegisteredNameServer
 
 
 
@@ -1708,7 +1703,7 @@ let res = ns.deleteRegisteredNameServer({
 #### addPrivacy(options) 
 
 [AUTO] Add WHOIS Privacy
-See: https://www.namesilo.com/api_reference.php#addPrivacy">https://www.namesilo.com/api_reference.php#addPrivacy
+See: https://www.namesilo.com/api_reference.php#addPrivacy
 
 
 
@@ -1749,7 +1744,7 @@ let res = ns.addPrivacy({
 #### removePrivacy(options) 
 
 [AUTO] Remove WHOIS Privacy
-See: https://www.namesilo.com/api_reference.php#removePrivacy">https://www.namesilo.com/api_reference.php#removePrivacy
+See: https://www.namesilo.com/api_reference.php#removePrivacy
 
 
 
@@ -1790,7 +1785,7 @@ let res = ns.removePrivacy({
 #### addAutoRenewal(options) 
 
 [AUTO] Add Auto-Renewal
-See: https://www.namesilo.com/api_reference.php#addAutoRenewal">https://www.namesilo.com/api_reference.php#addAutoRenewal
+See: https://www.namesilo.com/api_reference.php#addAutoRenewal
 
 
 
@@ -1831,7 +1826,7 @@ let res = ns.addAutoRenewal({
 #### removeAutoRenewal(options) 
 
 [AUTO] Remove Auto-Renewal
-See: https://www.namesilo.com/api_reference.php#removeAutoRenewal">https://www.namesilo.com/api_reference.php#removeAutoRenewal
+See: https://www.namesilo.com/api_reference.php#removeAutoRenewal
 
 
 
@@ -1872,7 +1867,7 @@ let res = ns.removeAutoRenewal({
 #### retrieveAuthCode(options) 
 
 [AUTO] Retrieve EPP Code
-See: https://www.namesilo.com/api_reference.php#retrieveAuthCode">https://www.namesilo.com/api_reference.php#retrieveAuthCode
+See: https://www.namesilo.com/api_reference.php#retrieveAuthCode
 
 
 
@@ -1913,7 +1908,7 @@ let res = ns.retrieveAuthCode({
 #### domainForward(options) 
 
 [AUTO] Forward a Domain
-See: https://www.namesilo.com/api_reference.php#domainForward">https://www.namesilo.com/api_reference.php#domainForward
+See: https://www.namesilo.com/api_reference.php#domainForward
 
 
 
@@ -1960,7 +1955,7 @@ let res = ns.domainForward({
 #### domainForwardSubDomain(options) 
 
 [AUTO] Forward a Sub-Domain
-See: https://www.namesilo.com/api_reference.php#domainForwardSubDomain">https://www.namesilo.com/api_reference.php#domainForwardSubDomain
+See: https://www.namesilo.com/api_reference.php#domainForwardSubDomain
 
 
 
@@ -2010,7 +2005,7 @@ let res = ns.domainForwardSubDomain({
 #### domainForwardSubDomainDelete(options) 
 
 [AUTO] Delete a Sub-Domain Forward
-See: https://www.namesilo.com/api_reference.php#domainForwardSubDomainDelete">https://www.namesilo.com/api_reference.php#domainForwardSubDomainDelete
+See: https://www.namesilo.com/api_reference.php#domainForwardSubDomainDelete
 
 
 
@@ -2053,7 +2048,7 @@ let res = ns.domainForwardSubDomainDelete({
 #### domainLock(options) 
 
 [AUTO] Lock a Domain
-See: https://www.namesilo.com/api_reference.php#domainLock">https://www.namesilo.com/api_reference.php#domainLock
+See: https://www.namesilo.com/api_reference.php#domainLock
 
 
 
@@ -2094,7 +2089,7 @@ let res = ns.domainLock({
 #### domainUnlock(options) 
 
 [AUTO] Unlock a Domain
-See: https://www.namesilo.com/api_reference.php#domainUnlock">https://www.namesilo.com/api_reference.php#domainUnlock
+See: https://www.namesilo.com/api_reference.php#domainUnlock
 
 
 
@@ -2135,7 +2130,7 @@ let res = ns.domainUnlock({
 #### listEmailForwards(options) 
 
 [AUTO] View the email forwards for your domain
-See: https://www.namesilo.com/api_reference.php#listEmailForwards">https://www.namesilo.com/api_reference.php#listEmailForwards
+See: https://www.namesilo.com/api_reference.php#listEmailForwards
 
 
 
@@ -2189,7 +2184,7 @@ let res = ns.listEmailForwards({
 #### configureEmailForward(options) 
 
 [AUTO] Add or modify an email forward for your domain
-See: https://www.namesilo.com/api_reference.php#configureEmailForward">https://www.namesilo.com/api_reference.php#configureEmailForward
+See: https://www.namesilo.com/api_reference.php#configureEmailForward
 
 
 
@@ -2237,7 +2232,7 @@ let res = ns.configureEmailForward({
 #### deleteEmailForward(options) 
 
 [AUTO] Delete an email forward for your domain
-See: https://www.namesilo.com/api_reference.php#deleteEmailForward">https://www.namesilo.com/api_reference.php#deleteEmailForward
+See: https://www.namesilo.com/api_reference.php#deleteEmailForward
 
 
 
@@ -2281,7 +2276,7 @@ let res = ns.deleteEmailForward({
 #### registrantVerificationStatus(options) 
 
 [AUTO] View the verification status of any Registrant email addresses
-See: https://www.namesilo.com/api_reference.php#registrantVerificationStatus">https://www.namesilo.com/api_reference.php#registrantVerificationStatus
+See: https://www.namesilo.com/api_reference.php#registrantVerificationStatus
 
 
 
@@ -2331,7 +2326,7 @@ let res = ns.registrantVerificationStatus({})
 #### emailVerification(options) 
 
 [AUTO] Verify a Registrant email address
-See: https://www.namesilo.com/api_reference.php#emailVerification">https://www.namesilo.com/api_reference.php#emailVerification
+See: https://www.namesilo.com/api_reference.php#emailVerification
 
 
 
@@ -2373,7 +2368,7 @@ let res = ns.emailVerification({
 #### getAccountBalance(options) 
 
 [AUTO] View NameSilo Account Funds Balance
-See: https://www.namesilo.com/api_reference.php#getAccountBalance">https://www.namesilo.com/api_reference.php#getAccountBalance
+See: https://www.namesilo.com/api_reference.php#getAccountBalance
 
 
 
@@ -2412,7 +2407,7 @@ let res = ns.getAccountBalance({})
 #### addAccountFunds(options) 
 
 [AUTO] Add NameSilo Account Funds
-See: https://www.namesilo.com/api_reference.php#addAccountFunds">https://www.namesilo.com/api_reference.php#addAccountFunds
+See: https://www.namesilo.com/api_reference.php#addAccountFunds
 
 
 
@@ -2456,7 +2451,7 @@ let res = ns.addAccountFunds({
 #### marketplaceActiveSalesOverview(options) 
 
 [AUTO] View all of your active Marketplace sales
-See: https://www.namesilo.com/api_reference.php#marketplaceActiveSalesOverview">https://www.namesilo.com/api_reference.php#marketplaceActiveSalesOverview
+See: https://www.namesilo.com/api_reference.php#marketplaceActiveSalesOverview
 
 
 
@@ -2524,7 +2519,7 @@ let res = ns.marketplaceActiveSalesOverview({})
 #### marketplaceAddOrModifySale(options) 
 
 [AUTO] Allows you to add a new Marketplace sale or modify and existing sale
-See: https://www.namesilo.com/api_reference.php#marketplaceAddOrModifySale">https://www.namesilo.com/api_reference.php#marketplaceAddOrModifySale
+See: https://www.namesilo.com/api_reference.php#marketplaceAddOrModifySale
 
 
 
@@ -2576,7 +2571,7 @@ let res = ns.marketplaceAddOrModifySale({
 #### marketplaceLandingPageUpdate(options) 
 
 [AUTO] Allows you to update the appearance of your Marketplace Landing Page
-See: https://www.namesilo.com/api_reference.php#marketplaceLandingPageUpdate">https://www.namesilo.com/api_reference.php#marketplaceLandingPageUpdate
+See: https://www.namesilo.com/api_reference.php#marketplaceLandingPageUpdate
 
 
 
@@ -2621,7 +2616,7 @@ let res = ns.marketplaceLandingPageUpdate({
 #### getPrices(options) 
 
 [AUTO] Return our price list
-See: https://www.namesilo.com/api_reference.php#getPrices">https://www.namesilo.com/api_reference.php#getPrices
+See: https://www.namesilo.com/api_reference.php#getPrices
 
 
 
@@ -2669,7 +2664,7 @@ let res = ns.getPrices({})
 #### listOrders(options) 
 
 [AUTO] Returns Complete Account Order History
-See: https://www.namesilo.com/api_reference.php#listOrders">https://www.namesilo.com/api_reference.php#listOrders
+See: https://www.namesilo.com/api_reference.php#listOrders
 
 
 
@@ -2721,7 +2716,7 @@ let res = ns.listOrders({})
 #### orderDetails(options) 
 
 [AUTO] View Details For Provided Order Number
-See: https://www.namesilo.com/api_reference.php#orderDetails">https://www.namesilo.com/api_reference.php#orderDetails
+See: https://www.namesilo.com/api_reference.php#orderDetails
 
 
 
