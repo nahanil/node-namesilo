@@ -195,6 +195,46 @@ let res = ns.listDomains()
 
 
 
+#### renewDomain(domain, years[, options]) 
+
+Renew a domain.
+
+
+
+
+##### Parameters
+
+| Name | Type | Description |  |
+| ---- | ---- | ----------- | -------- |
+| domain | `String` `Object`  | (String) The domain to renew | (Object) Object containing all API options | &nbsp; |
+| years | `Number`  | The amount of years to renew domain for | &nbsp; |
+| options | `Object`  |  | *Optional* |
+| options.payment_id | `Number`  | The ID number for the verified credit card to use for the transaction. If you do not specify a payment_id, we will attempt to process the transaction using your account funds. | *Optional* |
+| options.coupon | `String`  | The coupon code to apply to this order | *Optional* |
+
+
+
+
+##### Examples
+
+```javascript
+// Respone
+{ code: 300,
+  detail: 'success',
+  message: 'Your domain renewal was successfully processed.',
+  domain: 'namesilo.com',
+  order_amount: 7.77
+}
+```
+
+
+##### Returns
+
+
+- `Promise`  API Reply
+
+
+
 
 ### lib/xx_autogen.js
 
