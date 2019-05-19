@@ -112,6 +112,14 @@ describe('NameSilo', () => {
   })
 
   describe(`checkDomainAvailability`, () => {
+    it(`should accept a string string input`, async () => {
+      let ns = getMockClient('checkRegisterAvailability')
+      await ns.checkRegisterAvailability('example.com')
+
+      expect(ns.post).toHaveBeenCalledTimes(1)
+      expect(ns.post.mock.calls[0][1]).toEqual({ domains: 'example.com' })
+    })
+
     it(`should accept an array as input`, async () => {
       let ns = getMockClient('checkRegisterAvailability')
       await ns.checkRegisterAvailability(['example.com', 'example.net'])
@@ -119,15 +127,6 @@ describe('NameSilo', () => {
       expect(ns.post).toHaveBeenCalledTimes(1)
       expect(ns.post.mock.calls[0][1]).toEqual({ domains: 'example.com,example.net' })
     })
-
-    // it(`should flatten arrays`, async () => {
-    //   let ns = getMockClient('checkRegisterAvailability')
-    //   let data = await ns.checkRegisterAvailability(['example.com', 'example.net'])
-
-    //   console.log(`checkRegisterAvailability got mock response:`, JSON.stringify(data, null, 4))
-    //   expect(ns.post).toHaveBeenCalledTimes(1)
-    //   expect(ns.post.mock.calls[0][1]).toEqual({ domains: 'example.com,example.net' })
-    // })
   })
 
 })
