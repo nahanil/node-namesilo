@@ -1,4 +1,4 @@
-# @nahanil/namesilo *0.0.1*
+# [@nahanil/namesilo](https://github.com/texh/node-namesilo) *0.0.1*
 
 > Interact with the NameSilo API
 
@@ -144,23 +144,12 @@ let res = await ns.checkRegisterAvailability(['namesilo.com' , 'namesilo.net' , 
 ### lib/xx_autogen.js
 
 
-#### registerDomain(options) 
+#### registerDomain() 
 
 [AUTO] Register a Domain
 See: https://www.namesilo.com/api_reference.php#registerDomain
 
 
-
-
-##### Parameters
-
-| Name | Type | Description |  |
-| ---- | ---- | ----------- | -------- |
-| options | `Object`  |  | &nbsp; |
-| options.domain |  |  | &nbsp; |
-| options.years |  |  | &nbsp; |
-| options.private |  |  | &nbsp; |
-| options.auto_renew |  |  | &nbsp; |
 
 
 
@@ -194,23 +183,12 @@ let res = ns.registerDomain({
 
 
 
-#### registerDomainDrop(options) 
+#### registerDomainDrop() 
 
 [AUTO] Register a Domain using Drop-Catching
 See: https://www.namesilo.com/api_reference.php#registerDomainDrop
 
 
-
-
-##### Parameters
-
-| Name | Type | Description |  |
-| ---- | ---- | ----------- | -------- |
-| options | `Object`  |  | &nbsp; |
-| options.domain |  |  | &nbsp; |
-| options.years |  |  | &nbsp; |
-| options.private |  |  | &nbsp; |
-| options.auto_renew |  |  | &nbsp; |
 
 
 
@@ -244,21 +222,12 @@ let res = ns.registerDomainDrop({
 
 
 
-#### renewDomain(options) 
+#### renewDomain() 
 
 [AUTO] Renew a Domain
 See: https://www.namesilo.com/api_reference.php#renewDomain
 
 
-
-
-##### Parameters
-
-| Name | Type | Description |  |
-| ---- | ---- | ----------- | -------- |
-| options | `Object`  |  | &nbsp; |
-| options.domain |  |  | &nbsp; |
-| options.years |  |  | &nbsp; |
 
 
 
@@ -290,23 +259,12 @@ let res = ns.renewDomain({
 
 
 
-#### transferDomain(options) 
+#### transferDomain() 
 
 [AUTO] Transfer a Domain
 See: https://www.namesilo.com/api_reference.php#transferDomain
 
 
-
-
-##### Parameters
-
-| Name | Type | Description |  |
-| ---- | ---- | ----------- | -------- |
-| options | `Object`  |  | &nbsp; |
-| options.domain |  |  | &nbsp; |
-| options.auth |  |  | &nbsp; |
-| options.private |  |  | &nbsp; |
-| options.auto_renew |  |  | &nbsp; |
 
 
 
@@ -340,20 +298,12 @@ let res = ns.transferDomain({
 
 
 
-#### checkTransferStatus(options) 
+#### checkTransferStatus() 
 
 [AUTO] Check Transfer Status
 See: https://www.namesilo.com/api_reference.php#checkTransferStatus
 
 
-
-
-##### Parameters
-
-| Name | Type | Description |  |
-| ---- | ---- | ----------- | -------- |
-| options | `Object`  |  | &nbsp; |
-| options.domain |  |  | &nbsp; |
 
 
 
@@ -384,21 +334,12 @@ let res = ns.checkTransferStatus({
 
 
 
-#### transferUpdateChangeEPPCode(options) 
+#### transferUpdateChangeEPPCode() 
 
 [AUTO] Transfer Update (Add/Change EPP Code)
 See: https://www.namesilo.com/api_reference.php#transferUpdateChangeEPPCode
 
 
-
-
-##### Parameters
-
-| Name | Type | Description |  |
-| ---- | ---- | ----------- | -------- |
-| options | `Object`  |  | &nbsp; |
-| options.domain |  |  | &nbsp; |
-| options.auth |  |  | &nbsp; |
 
 
 
@@ -427,20 +368,12 @@ let res = ns.transferUpdateChangeEPPCode({
 
 
 
-#### transferUpdateResendAdminEmail(options) 
+#### transferUpdateResendAdminEmail() 
 
 [AUTO] Transfer Update (Re-Send Administrative Email Verification)
 See: https://www.namesilo.com/api_reference.php#transferUpdateResendAdminEmail
 
 
-
-
-##### Parameters
-
-| Name | Type | Description |  |
-| ---- | ---- | ----------- | -------- |
-| options | `Object`  |  | &nbsp; |
-| options.domain |  |  | &nbsp; |
 
 
 
@@ -468,20 +401,12 @@ let res = ns.transferUpdateResendAdminEmail({
 
 
 
-#### transferUpdateResubmitToRegistry(options) 
+#### transferUpdateResubmitToRegistry() 
 
 [AUTO] Transfer Update (Re-Submit a transfer to the registry)
 See: https://www.namesilo.com/api_reference.php#transferUpdateResubmitToRegistry
 
 
-
-
-##### Parameters
-
-| Name | Type | Description |  |
-| ---- | ---- | ----------- | -------- |
-| options | `Object`  |  | &nbsp; |
-| options.domain |  |  | &nbsp; |
 
 
 
@@ -509,20 +434,12 @@ let res = ns.transferUpdateResubmitToRegistry({
 
 
 
-#### checkTransferAvailability(options) 
+#### checkTransferAvailability() 
 
 [AUTO] Check Availability of Domain Transfer
 See: https://www.namesilo.com/api_reference.php#checkTransferAvailability
 
 
-
-
-##### Parameters
-
-| Name | Type | Description |  |
-| ---- | ---- | ----------- | -------- |
-| options | `Object`  |  | &nbsp; |
-| options.domains |  |  | &nbsp; |
 
 
 
@@ -568,20 +485,12 @@ let res = ns.checkTransferAvailability({
 
 
 
-#### getDomainInfo(options) 
+#### getDomainInfo() 
 
 [AUTO] Get Domain Information
 See: https://www.namesilo.com/api_reference.php#getDomainInfo
 
 
-
-
-##### Parameters
-
-| Name | Type | Description |  |
-| ---- | ---- | ----------- | -------- |
-| options | `Object`  |  | &nbsp; |
-| options.domain |  |  | &nbsp; |
 
 
 
@@ -630,19 +539,12 @@ let res = ns.getDomainInfo({
 
 
 
-#### contactList(options) 
+#### contactList() 
 
 [AUTO] View contact profiles
 See: https://www.namesilo.com/api_reference.php#contactList
 
 
-
-
-##### Parameters
-
-| Name | Type | Description |  |
-| ---- | ---- | ----------- | -------- |
-| options | `Object`  |  | &nbsp; |
 
 
 
@@ -716,28 +618,12 @@ let res = ns.contactList({})
 
 
 
-#### contactAdd(options) 
+#### contactAdd() 
 
 [AUTO] Add a contact profile
 See: https://www.namesilo.com/api_reference.php#contactAdd
 
 
-
-
-##### Parameters
-
-| Name | Type | Description |  |
-| ---- | ---- | ----------- | -------- |
-| options | `Object`  |  | &nbsp; |
-| options.fn |  |  | &nbsp; |
-| options.ln |  |  | &nbsp; |
-| options.ad |  |  | &nbsp; |
-| options.cy |  |  | &nbsp; |
-| options.st |  |  | &nbsp; |
-| options.zp |  |  | &nbsp; |
-| options.ct |  |  | &nbsp; |
-| options.em |  |  | &nbsp; |
-| options.ph |  |  | &nbsp; |
 
 
 
@@ -774,29 +660,12 @@ let res = ns.contactAdd({
 
 
 
-#### contactUpdate(options) 
+#### contactUpdate() 
 
 [AUTO] Update a contact profile
 See: https://www.namesilo.com/api_reference.php#contactUpdate
 
 
-
-
-##### Parameters
-
-| Name | Type | Description |  |
-| ---- | ---- | ----------- | -------- |
-| options | `Object`  |  | &nbsp; |
-| options.contact_id |  |  | &nbsp; |
-| options.fn |  |  | &nbsp; |
-| options.ln |  |  | &nbsp; |
-| options.ad |  |  | &nbsp; |
-| options.cy |  |  | &nbsp; |
-| options.st |  |  | &nbsp; |
-| options.zp |  |  | &nbsp; |
-| options.ct |  |  | &nbsp; |
-| options.em |  |  | &nbsp; |
-| options.ph |  |  | &nbsp; |
 
 
 
@@ -833,20 +702,12 @@ let res = ns.contactUpdate({
 
 
 
-#### contactDelete(options) 
+#### contactDelete() 
 
 [AUTO] Delete a contact profile
 See: https://www.namesilo.com/api_reference.php#contactDelete
 
 
-
-
-##### Parameters
-
-| Name | Type | Description |  |
-| ---- | ---- | ----------- | -------- |
-| options | `Object`  |  | &nbsp; |
-| options.contact_id |  |  | &nbsp; |
 
 
 
@@ -874,22 +735,12 @@ let res = ns.contactDelete({
 
 
 
-#### contactDomainAssociate(options) 
+#### contactDomainAssociate() 
 
 [AUTO] Associate a contact profile with a domain
 See: https://www.namesilo.com/api_reference.php#contactDomainAssociate
 
 
-
-
-##### Parameters
-
-| Name | Type | Description |  |
-| ---- | ---- | ----------- | -------- |
-| options | `Object`  |  | &nbsp; |
-| options.domain |  |  | &nbsp; |
-| options.administrative |  |  | &nbsp; |
-| options.technical |  |  | &nbsp; |
 
 
 
@@ -919,22 +770,12 @@ let res = ns.contactDomainAssociate({
 
 
 
-#### changeNameServers(options) 
+#### changeNameServers() 
 
 [AUTO] Change NameServers
 See: https://www.namesilo.com/api_reference.php#changeNameServers
 
 
-
-
-##### Parameters
-
-| Name | Type | Description |  |
-| ---- | ---- | ----------- | -------- |
-| options | `Object`  |  | &nbsp; |
-| options.domain |  |  | &nbsp; |
-| options.ns1 |  |  | &nbsp; |
-| options.ns2 |  |  | &nbsp; |
 
 
 
@@ -964,20 +805,12 @@ let res = ns.changeNameServers({
 
 
 
-#### dnsListRecords(options) 
+#### dnsListRecords() 
 
 [AUTO] List Current DNS Records
 See: https://www.namesilo.com/api_reference.php#dnsListRecords
 
 
-
-
-##### Parameters
-
-| Name | Type | Description |  |
-| ---- | ---- | ----------- | -------- |
-| options | `Object`  |  | &nbsp; |
-| options.domain |  |  | &nbsp; |
 
 
 
@@ -1039,24 +872,12 @@ let res = ns.dnsListRecords({
 
 
 
-#### dnsAddRecord(options) 
+#### dnsAddRecord() 
 
 [AUTO] Add DNS Records
 See: https://www.namesilo.com/api_reference.php#dnsAddRecord
 
 
-
-
-##### Parameters
-
-| Name | Type | Description |  |
-| ---- | ---- | ----------- | -------- |
-| options | `Object`  |  | &nbsp; |
-| options.domain |  |  | &nbsp; |
-| options.rrtype |  |  | &nbsp; |
-| options.rrhost |  |  | &nbsp; |
-| options.rrvalue |  |  | &nbsp; |
-| options.rrttl |  |  | &nbsp; |
 
 
 
@@ -1089,24 +910,12 @@ let res = ns.dnsAddRecord({
 
 
 
-#### dnsUpdateRecord(options) 
+#### dnsUpdateRecord() 
 
 [AUTO] Update DNS Records
 See: https://www.namesilo.com/api_reference.php#dnsUpdateRecord
 
 
-
-
-##### Parameters
-
-| Name | Type | Description |  |
-| ---- | ---- | ----------- | -------- |
-| options | `Object`  |  | &nbsp; |
-| options.domain |  |  | &nbsp; |
-| options.rrid |  |  | &nbsp; |
-| options.rrhost |  |  | &nbsp; |
-| options.rrvalue |  |  | &nbsp; |
-| options.rrttl |  |  | &nbsp; |
 
 
 
@@ -1139,21 +948,12 @@ let res = ns.dnsUpdateRecord({
 
 
 
-#### dnsDeleteRecord(options) 
+#### dnsDeleteRecord() 
 
 [AUTO] Delete DNS Records
 See: https://www.namesilo.com/api_reference.php#dnsDeleteRecord
 
 
-
-
-##### Parameters
-
-| Name | Type | Description |  |
-| ---- | ---- | ----------- | -------- |
-| options | `Object`  |  | &nbsp; |
-| options.domain |  |  | &nbsp; |
-| options.rrid |  |  | &nbsp; |
 
 
 
@@ -1182,20 +982,12 @@ let res = ns.dnsDeleteRecord({
 
 
 
-#### dnsSecListRecords(options) 
+#### dnsSecListRecords() 
 
 [AUTO] List Current DS (DNSSEC) Records
 See: https://www.namesilo.com/api_reference.php#dnsSecListRecords
 
 
-
-
-##### Parameters
-
-| Name | Type | Description |  |
-| ---- | ---- | ----------- | -------- |
-| options | `Object`  |  | &nbsp; |
-| options.domain |  |  | &nbsp; |
 
 
 
@@ -1237,24 +1029,12 @@ let res = ns.dnsSecListRecords({
 
 
 
-#### dnsSecAddRecord(options) 
+#### dnsSecAddRecord() 
 
 [AUTO] Add a DS record (DNSSEC) to your domain
 See: https://www.namesilo.com/api_reference.php#dnsSecAddRecord
 
 
-
-
-##### Parameters
-
-| Name | Type | Description |  |
-| ---- | ---- | ----------- | -------- |
-| options | `Object`  |  | &nbsp; |
-| options.domain |  |  | &nbsp; |
-| options.digest |  |  | &nbsp; |
-| options.keyTag |  |  | &nbsp; |
-| options.digestType |  |  | &nbsp; |
-| options.alg |  |  | &nbsp; |
 
 
 
@@ -1286,24 +1066,12 @@ let res = ns.dnsSecAddRecord({
 
 
 
-#### dnsSecDeleteRecord(options) 
+#### dnsSecDeleteRecord() 
 
 [AUTO] Delete a DS record (DNSSEC) from your domain
 See: https://www.namesilo.com/api_reference.php#dnsSecDeleteRecord
 
 
-
-
-##### Parameters
-
-| Name | Type | Description |  |
-| ---- | ---- | ----------- | -------- |
-| options | `Object`  |  | &nbsp; |
-| options.domain |  |  | &nbsp; |
-| options.digest |  |  | &nbsp; |
-| options.keyTag |  |  | &nbsp; |
-| options.digestType |  |  | &nbsp; |
-| options.alg |  |  | &nbsp; |
 
 
 
@@ -1335,19 +1103,12 @@ let res = ns.dnsSecDeleteRecord({
 
 
 
-#### portfolioList(options) 
+#### portfolioList() 
 
 [AUTO] View active portfolios
 See: https://www.namesilo.com/api_reference.php#portfolioList
 
 
-
-
-##### Parameters
-
-| Name | Type | Description |  |
-| ---- | ---- | ----------- | -------- |
-| options | `Object`  |  | &nbsp; |
 
 
 
@@ -1379,20 +1140,12 @@ let res = ns.portfolioList({})
 
 
 
-#### portfolioAdd(options) 
+#### portfolioAdd() 
 
 [AUTO] Add a portfolio
 See: https://www.namesilo.com/api_reference.php#portfolioAdd
 
 
-
-
-##### Parameters
-
-| Name | Type | Description |  |
-| ---- | ---- | ----------- | -------- |
-| options | `Object`  |  | &nbsp; |
-| options.portfolio |  |  | &nbsp; |
 
 
 
@@ -1420,20 +1173,12 @@ let res = ns.portfolioAdd({
 
 
 
-#### portfolioDelete(options) 
+#### portfolioDelete() 
 
 [AUTO] Delete a portfolio
 See: https://www.namesilo.com/api_reference.php#portfolioDelete
 
 
-
-
-##### Parameters
-
-| Name | Type | Description |  |
-| ---- | ---- | ----------- | -------- |
-| options | `Object`  |  | &nbsp; |
-| options.portfolio |  |  | &nbsp; |
 
 
 
@@ -1461,21 +1206,12 @@ let res = ns.portfolioDelete({
 
 
 
-#### portfolioDomainAssociate(options) 
+#### portfolioDomainAssociate() 
 
 [AUTO] Assign a domain to a portfolio
 See: https://www.namesilo.com/api_reference.php#portfolioDomainAssociate
 
 
-
-
-##### Parameters
-
-| Name | Type | Description |  |
-| ---- | ---- | ----------- | -------- |
-| options | `Object`  |  | &nbsp; |
-| options.portfolio |  |  | &nbsp; |
-| options.domains |  |  | &nbsp; |
 
 
 
@@ -1505,20 +1241,12 @@ let res = ns.portfolioDomainAssociate({
 
 
 
-#### listRegisteredNameServers(options) 
+#### listRegisteredNameServers() 
 
 [AUTO] List Registered NameServers
 See: https://www.namesilo.com/api_reference.php#listRegisteredNameServers
 
 
-
-
-##### Parameters
-
-| Name | Type | Description |  |
-| ---- | ---- | ----------- | -------- |
-| options | `Object`  |  | &nbsp; |
-| options.domain |  |  | &nbsp; |
 
 
 
@@ -1561,23 +1289,12 @@ let res = ns.listRegisteredNameServers({
 
 
 
-#### addRegisteredNameServer(options) 
+#### addRegisteredNameServer() 
 
 [AUTO] Add a Registered NameServer
 See: https://www.namesilo.com/api_reference.php#addRegisteredNameServer
 
 
-
-
-##### Parameters
-
-| Name | Type | Description |  |
-| ---- | ---- | ----------- | -------- |
-| options | `Object`  |  | &nbsp; |
-| options.domain |  |  | &nbsp; |
-| options.new_host |  |  | &nbsp; |
-| options.ip1 |  |  | &nbsp; |
-| options.ip2 |  |  | &nbsp; |
 
 
 
@@ -1608,24 +1325,12 @@ let res = ns.addRegisteredNameServer({
 
 
 
-#### modifyRegisteredNameServer(options) 
+#### modifyRegisteredNameServer() 
 
 [AUTO] Modify a Registered NameServer
 See: https://www.namesilo.com/api_reference.php#modifyRegisteredNameServer
 
 
-
-
-##### Parameters
-
-| Name | Type | Description |  |
-| ---- | ---- | ----------- | -------- |
-| options | `Object`  |  | &nbsp; |
-| options.domain |  |  | &nbsp; |
-| options. |  | current_host | &nbsp; |
-| options.new_host |  |  | &nbsp; |
-| options.ip1 |  |  | &nbsp; |
-| options.ip2 |  |  | &nbsp; |
 
 
 
@@ -1657,21 +1362,12 @@ let res = ns.modifyRegisteredNameServer({
 
 
 
-#### deleteRegisteredNameServer(options) 
+#### deleteRegisteredNameServer() 
 
 [AUTO] Delete a Registered NameServer
 See: https://www.namesilo.com/api_reference.php#deleteRegisteredNameServer
 
 
-
-
-##### Parameters
-
-| Name | Type | Description |  |
-| ---- | ---- | ----------- | -------- |
-| options | `Object`  |  | &nbsp; |
-| options.domain |  |  | &nbsp; |
-| options. |  | current_host | &nbsp; |
 
 
 
@@ -1700,20 +1396,12 @@ let res = ns.deleteRegisteredNameServer({
 
 
 
-#### addPrivacy(options) 
+#### addPrivacy() 
 
 [AUTO] Add WHOIS Privacy
 See: https://www.namesilo.com/api_reference.php#addPrivacy
 
 
-
-
-##### Parameters
-
-| Name | Type | Description |  |
-| ---- | ---- | ----------- | -------- |
-| options | `Object`  |  | &nbsp; |
-| options.domain |  |  | &nbsp; |
 
 
 
@@ -1741,20 +1429,12 @@ let res = ns.addPrivacy({
 
 
 
-#### removePrivacy(options) 
+#### removePrivacy() 
 
 [AUTO] Remove WHOIS Privacy
 See: https://www.namesilo.com/api_reference.php#removePrivacy
 
 
-
-
-##### Parameters
-
-| Name | Type | Description |  |
-| ---- | ---- | ----------- | -------- |
-| options | `Object`  |  | &nbsp; |
-| options.domain |  |  | &nbsp; |
 
 
 
@@ -1782,20 +1462,12 @@ let res = ns.removePrivacy({
 
 
 
-#### addAutoRenewal(options) 
+#### addAutoRenewal() 
 
 [AUTO] Add Auto-Renewal
 See: https://www.namesilo.com/api_reference.php#addAutoRenewal
 
 
-
-
-##### Parameters
-
-| Name | Type | Description |  |
-| ---- | ---- | ----------- | -------- |
-| options | `Object`  |  | &nbsp; |
-| options.domain |  |  | &nbsp; |
 
 
 
@@ -1823,20 +1495,12 @@ let res = ns.addAutoRenewal({
 
 
 
-#### removeAutoRenewal(options) 
+#### removeAutoRenewal() 
 
 [AUTO] Remove Auto-Renewal
 See: https://www.namesilo.com/api_reference.php#removeAutoRenewal
 
 
-
-
-##### Parameters
-
-| Name | Type | Description |  |
-| ---- | ---- | ----------- | -------- |
-| options | `Object`  |  | &nbsp; |
-| options.domain |  |  | &nbsp; |
 
 
 
@@ -1864,20 +1528,12 @@ let res = ns.removeAutoRenewal({
 
 
 
-#### retrieveAuthCode(options) 
+#### retrieveAuthCode() 
 
 [AUTO] Retrieve EPP Code
 See: https://www.namesilo.com/api_reference.php#retrieveAuthCode
 
 
-
-
-##### Parameters
-
-| Name | Type | Description |  |
-| ---- | ---- | ----------- | -------- |
-| options | `Object`  |  | &nbsp; |
-| options.domain |  |  | &nbsp; |
 
 
 
@@ -1905,23 +1561,12 @@ let res = ns.retrieveAuthCode({
 
 
 
-#### domainForward(options) 
+#### domainForward() 
 
 [AUTO] Forward a Domain
 See: https://www.namesilo.com/api_reference.php#domainForward
 
 
-
-
-##### Parameters
-
-| Name | Type | Description |  |
-| ---- | ---- | ----------- | -------- |
-| options | `Object`  |  | &nbsp; |
-| options.domain |  |  | &nbsp; |
-| options.protocol |  |  | &nbsp; |
-| options.address |  |  | &nbsp; |
-| options.method |  |  | &nbsp; |
 
 
 
@@ -1952,24 +1597,12 @@ let res = ns.domainForward({
 
 
 
-#### domainForwardSubDomain(options) 
+#### domainForwardSubDomain() 
 
 [AUTO] Forward a Sub-Domain
 See: https://www.namesilo.com/api_reference.php#domainForwardSubDomain
 
 
-
-
-##### Parameters
-
-| Name | Type | Description |  |
-| ---- | ---- | ----------- | -------- |
-| options | `Object`  |  | &nbsp; |
-| options.domain |  |  | &nbsp; |
-| options.sub_domain |  |  | &nbsp; |
-| options.protocol |  |  | &nbsp; |
-| options.address |  |  | &nbsp; |
-| options.method |  |  | &nbsp; |
 
 
 
@@ -2002,21 +1635,12 @@ let res = ns.domainForwardSubDomain({
 
 
 
-#### domainForwardSubDomainDelete(options) 
+#### domainForwardSubDomainDelete() 
 
 [AUTO] Delete a Sub-Domain Forward
 See: https://www.namesilo.com/api_reference.php#domainForwardSubDomainDelete
 
 
-
-
-##### Parameters
-
-| Name | Type | Description |  |
-| ---- | ---- | ----------- | -------- |
-| options | `Object`  |  | &nbsp; |
-| options.domain |  |  | &nbsp; |
-| options.sub_domain |  |  | &nbsp; |
 
 
 
@@ -2045,20 +1669,12 @@ let res = ns.domainForwardSubDomainDelete({
 
 
 
-#### domainLock(options) 
+#### domainLock() 
 
 [AUTO] Lock a Domain
 See: https://www.namesilo.com/api_reference.php#domainLock
 
 
-
-
-##### Parameters
-
-| Name | Type | Description |  |
-| ---- | ---- | ----------- | -------- |
-| options | `Object`  |  | &nbsp; |
-| options.domain |  |  | &nbsp; |
 
 
 
@@ -2086,20 +1702,12 @@ let res = ns.domainLock({
 
 
 
-#### domainUnlock(options) 
+#### domainUnlock() 
 
 [AUTO] Unlock a Domain
 See: https://www.namesilo.com/api_reference.php#domainUnlock
 
 
-
-
-##### Parameters
-
-| Name | Type | Description |  |
-| ---- | ---- | ----------- | -------- |
-| options | `Object`  |  | &nbsp; |
-| options.domain |  |  | &nbsp; |
 
 
 
@@ -2127,20 +1735,12 @@ let res = ns.domainUnlock({
 
 
 
-#### listEmailForwards(options) 
+#### listEmailForwards() 
 
 [AUTO] View the email forwards for your domain
 See: https://www.namesilo.com/api_reference.php#listEmailForwards
 
 
-
-
-##### Parameters
-
-| Name | Type | Description |  |
-| ---- | ---- | ----------- | -------- |
-| options | `Object`  |  | &nbsp; |
-| options.domain |  |  | &nbsp; |
 
 
 
@@ -2181,23 +1781,12 @@ let res = ns.listEmailForwards({
 
 
 
-#### configureEmailForward(options) 
+#### configureEmailForward() 
 
 [AUTO] Add or modify an email forward for your domain
 See: https://www.namesilo.com/api_reference.php#configureEmailForward
 
 
-
-
-##### Parameters
-
-| Name | Type | Description |  |
-| ---- | ---- | ----------- | -------- |
-| options | `Object`  |  | &nbsp; |
-| options.domain |  |  | &nbsp; |
-| options.email |  |  | &nbsp; |
-| options.forward1 |  |  | &nbsp; |
-| options.forward2 |  |  | &nbsp; |
 
 
 
@@ -2229,21 +1818,12 @@ let res = ns.configureEmailForward({
 
 
 
-#### deleteEmailForward(options) 
+#### deleteEmailForward() 
 
 [AUTO] Delete an email forward for your domain
 See: https://www.namesilo.com/api_reference.php#deleteEmailForward
 
 
-
-
-##### Parameters
-
-| Name | Type | Description |  |
-| ---- | ---- | ----------- | -------- |
-| options | `Object`  |  | &nbsp; |
-| options.domain |  |  | &nbsp; |
-| options.email |  |  | &nbsp; |
 
 
 
@@ -2273,19 +1853,12 @@ let res = ns.deleteEmailForward({
 
 
 
-#### registrantVerificationStatus(options) 
+#### registrantVerificationStatus() 
 
 [AUTO] View the verification status of any Registrant email addresses
 See: https://www.namesilo.com/api_reference.php#registrantVerificationStatus
 
 
-
-
-##### Parameters
-
-| Name | Type | Description |  |
-| ---- | ---- | ----------- | -------- |
-| options | `Object`  |  | &nbsp; |
 
 
 
@@ -2323,20 +1896,12 @@ let res = ns.registrantVerificationStatus({})
 
 
 
-#### emailVerification(options) 
+#### emailVerification() 
 
 [AUTO] Verify a Registrant email address
 See: https://www.namesilo.com/api_reference.php#emailVerification
 
 
-
-
-##### Parameters
-
-| Name | Type | Description |  |
-| ---- | ---- | ----------- | -------- |
-| options | `Object`  |  | &nbsp; |
-| options.email |  |  | &nbsp; |
 
 
 
@@ -2365,19 +1930,12 @@ let res = ns.emailVerification({
 
 
 
-#### getAccountBalance(options) 
+#### getAccountBalance() 
 
 [AUTO] View NameSilo Account Funds Balance
 See: https://www.namesilo.com/api_reference.php#getAccountBalance
 
 
-
-
-##### Parameters
-
-| Name | Type | Description |  |
-| ---- | ---- | ----------- | -------- |
-| options | `Object`  |  | &nbsp; |
 
 
 
@@ -2404,21 +1962,12 @@ let res = ns.getAccountBalance({})
 
 
 
-#### addAccountFunds(options) 
+#### addAccountFunds() 
 
 [AUTO] Add NameSilo Account Funds
 See: https://www.namesilo.com/api_reference.php#addAccountFunds
 
 
-
-
-##### Parameters
-
-| Name | Type | Description |  |
-| ---- | ---- | ----------- | -------- |
-| options | `Object`  |  | &nbsp; |
-| options.amount |  |  | &nbsp; |
-| options.payment_id |  |  | &nbsp; |
 
 
 
@@ -2448,19 +1997,12 @@ let res = ns.addAccountFunds({
 
 
 
-#### marketplaceActiveSalesOverview(options) 
+#### marketplaceActiveSalesOverview() 
 
 [AUTO] View all of your active Marketplace sales
 See: https://www.namesilo.com/api_reference.php#marketplaceActiveSalesOverview
 
 
-
-
-##### Parameters
-
-| Name | Type | Description |  |
-| ---- | ---- | ----------- | -------- |
-| options | `Object`  |  | &nbsp; |
 
 
 
@@ -2516,25 +2058,12 @@ let res = ns.marketplaceActiveSalesOverview({})
 
 
 
-#### marketplaceAddOrModifySale(options) 
+#### marketplaceAddOrModifySale() 
 
 [AUTO] Allows you to add a new Marketplace sale or modify and existing sale
 See: https://www.namesilo.com/api_reference.php#marketplaceAddOrModifySale
 
 
-
-
-##### Parameters
-
-| Name | Type | Description |  |
-| ---- | ---- | ----------- | -------- |
-| options | `Object`  |  | &nbsp; |
-| options.domain |  |  | &nbsp; |
-| options.action |  |  | &nbsp; |
-| options.sale_type |  |  | &nbsp; |
-| options.reserve |  |  | &nbsp; |
-| options.buy_now |  |  | &nbsp; |
-| options.payment_plan_offered |  |  | &nbsp; |
 
 
 
@@ -2568,22 +2097,12 @@ let res = ns.marketplaceAddOrModifySale({
 
 
 
-#### marketplaceLandingPageUpdate(options) 
+#### marketplaceLandingPageUpdate() 
 
 [AUTO] Allows you to update the appearance of your Marketplace Landing Page
 See: https://www.namesilo.com/api_reference.php#marketplaceLandingPageUpdate
 
 
-
-
-##### Parameters
-
-| Name | Type | Description |  |
-| ---- | ---- | ----------- | -------- |
-| options | `Object`  |  | &nbsp; |
-| options.domain |  |  | &nbsp; |
-| options.mp_template |  |  | &nbsp; |
-| options.mp_bgcolor |  |  | &nbsp; |
 
 
 
@@ -2613,19 +2132,12 @@ let res = ns.marketplaceLandingPageUpdate({
 
 
 
-#### getPrices(options) 
+#### getPrices() 
 
 [AUTO] Return our price list
 See: https://www.namesilo.com/api_reference.php#getPrices
 
 
-
-
-##### Parameters
-
-| Name | Type | Description |  |
-| ---- | ---- | ----------- | -------- |
-| options | `Object`  |  | &nbsp; |
 
 
 
@@ -2661,19 +2173,12 @@ let res = ns.getPrices({})
 
 
 
-#### listOrders(options) 
+#### listOrders() 
 
 [AUTO] Returns Complete Account Order History
 See: https://www.namesilo.com/api_reference.php#listOrders
 
 
-
-
-##### Parameters
-
-| Name | Type | Description |  |
-| ---- | ---- | ----------- | -------- |
-| options | `Object`  |  | &nbsp; |
 
 
 
@@ -2713,20 +2218,12 @@ let res = ns.listOrders({})
 
 
 
-#### orderDetails(options) 
+#### orderDetails() 
 
 [AUTO] View Details For Provided Order Number
 See: https://www.namesilo.com/api_reference.php#orderDetails
 
 
-
-
-##### Parameters
-
-| Name | Type | Description |  |
-| ---- | ---- | ----------- | -------- |
-| options | `Object`  |  | &nbsp; |
-| options.order_number |  |  | &nbsp; |
 
 
 
