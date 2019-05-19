@@ -6,10 +6,16 @@ const { getMockClient } = require('../test/unit/test-util')
 
 async function go() {
 let out = ''
-for (let action of actions) {
+for (let action of Object.keys(actions)) {
   let params = fixtures[action] && fixtures[action].params ? fixtures[action].params : null
   let strParams = params ? JSON.stringify(params, null, 2).replace(/"/g, "'").replace(/^/gm, ' * ').replace(' *', '').trim() : ''
   let jsdocParams = ''
+
+  if (actions[action] && actions[action].singleParam && params[actions[action].singleParam]) {
+    jsdocParams = `\n * @param {*} ${actions[action].singleParam}`
+    strParams = params[actions[action].singleParam]
+  }
+  if (strParams === '{}') { strParams = '' }
 
   /*
   if (params) {
@@ -31,7 +37,7 @@ out += `
  * @memberof NameSilo
  * @see https://www.namesilo.com/api_reference.php#${action}
  * @example
- * let res = ns.${action}(${strParams})
+ * let res = await ns.${action}(${strParams})
  * @example
  * // Output
  * ${exampleOut}

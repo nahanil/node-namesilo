@@ -140,6 +140,44 @@ let res = await ns.checkRegisterAvailability(['namesilo.com' , 'namesilo.net' , 
 
 
 
+#### changeNameServers(domain, nameservers) 
+
+Change the name servers associated with the provided domain name. You must provide between 2 and 13 name servers in order for this operation to be successful.
+
+
+
+
+##### Parameters
+
+| Name | Type | Description |  |
+| ---- | ---- | ----------- | -------- |
+| domain | `String` `Object`  | Domain name to modify | &nbsp; |
+| nameservers | `Array` `Undefined`  | Nameservers to set for domain | &nbsp; |
+
+
+
+
+##### Examples
+
+```javascript
+let res = await ns.changeNameServers('namesilo.com', ['ns1.namesilo.com', 'ns2.namesilo.com'])
+```
+```javascript
+let res = await ns.changeNameServers({ domain: 'namesilo.com', ns1: 'ns1.namesilo.com', ns2: 'ns2.namesilo.com' })
+```
+```javascript
+// Output
+{ code: 300, detail: 'success' }
+```
+
+
+##### Returns
+
+
+- `Promise`  API Reply
+
+
+
 
 ### lib/xx_autogen.js
 
@@ -157,7 +195,7 @@ See: https://www.namesilo.com/api_reference.php#registerDomain
 ##### Examples
 
 ```javascript
-let res = ns.registerDomain({
+let res = await ns.registerDomain({
   'domain': 'namesilo.com',
   'years': '2',
   'private': '1',
@@ -196,7 +234,7 @@ See: https://www.namesilo.com/api_reference.php#registerDomainDrop
 ##### Examples
 
 ```javascript
-let res = ns.registerDomainDrop({
+let res = await ns.registerDomainDrop({
   'domain': 'namesilo.com',
   'years': '2',
   'private': '1',
@@ -235,7 +273,7 @@ See: https://www.namesilo.com/api_reference.php#renewDomain
 ##### Examples
 
 ```javascript
-let res = ns.renewDomain({
+let res = await ns.renewDomain({
   'domain': 'namesilo.com',
   'years': '2'
 })
@@ -272,7 +310,7 @@ See: https://www.namesilo.com/api_reference.php#transferDomain
 ##### Examples
 
 ```javascript
-let res = ns.transferDomain({
+let res = await ns.transferDomain({
   'domain': 'namesilo.com',
   'auth': 'XXXXX',
   'private': '1',
@@ -298,7 +336,7 @@ let res = ns.transferDomain({
 
 
 
-#### checkTransferStatus() 
+#### checkTransferStatus(domain) 
 
 [AUTO] Check Transfer Status
 See: https://www.namesilo.com/api_reference.php#checkTransferStatus
@@ -306,14 +344,19 @@ See: https://www.namesilo.com/api_reference.php#checkTransferStatus
 
 
 
+##### Parameters
+
+| Name | Type | Description |  |
+| ---- | ---- | ----------- | -------- |
+| domain |  |  | &nbsp; |
+
+
 
 
 ##### Examples
 
 ```javascript
-let res = ns.checkTransferStatus({
-  'domain': 'namesilo.com'
-})
+let res = await ns.checkTransferStatus(namesilo.com)
 ```
 ```javascript
 // Output
@@ -347,7 +390,7 @@ See: https://www.namesilo.com/api_reference.php#transferUpdateChangeEPPCode
 ##### Examples
 
 ```javascript
-let res = ns.transferUpdateChangeEPPCode({
+let res = await ns.transferUpdateChangeEPPCode({
   'domain': 'namesilo.com',
   'auth': '12345ABCDE'
 })
@@ -368,7 +411,7 @@ let res = ns.transferUpdateChangeEPPCode({
 
 
 
-#### transferUpdateResendAdminEmail() 
+#### transferUpdateResendAdminEmail(domain) 
 
 [AUTO] Transfer Update (Re-Send Administrative Email Verification)
 See: https://www.namesilo.com/api_reference.php#transferUpdateResendAdminEmail
@@ -376,14 +419,19 @@ See: https://www.namesilo.com/api_reference.php#transferUpdateResendAdminEmail
 
 
 
+##### Parameters
+
+| Name | Type | Description |  |
+| ---- | ---- | ----------- | -------- |
+| domain |  |  | &nbsp; |
+
+
 
 
 ##### Examples
 
 ```javascript
-let res = ns.transferUpdateResendAdminEmail({
-  'domain': 'namesilo.com'
-})
+let res = await ns.transferUpdateResendAdminEmail(namesilo.com)
 ```
 ```javascript
 // Output
@@ -401,7 +449,7 @@ let res = ns.transferUpdateResendAdminEmail({
 
 
 
-#### transferUpdateResubmitToRegistry() 
+#### transferUpdateResubmitToRegistry(domain) 
 
 [AUTO] Transfer Update (Re-Submit a transfer to the registry)
 See: https://www.namesilo.com/api_reference.php#transferUpdateResubmitToRegistry
@@ -409,14 +457,19 @@ See: https://www.namesilo.com/api_reference.php#transferUpdateResubmitToRegistry
 
 
 
+##### Parameters
+
+| Name | Type | Description |  |
+| ---- | ---- | ----------- | -------- |
+| domain |  |  | &nbsp; |
+
+
 
 
 ##### Examples
 
 ```javascript
-let res = ns.transferUpdateResubmitToRegistry({
-  'domain': 'namesilo.com'
-})
+let res = await ns.transferUpdateResubmitToRegistry(namesilo.com)
 ```
 ```javascript
 // Output
@@ -434,7 +487,7 @@ let res = ns.transferUpdateResubmitToRegistry({
 
 
 
-#### checkTransferAvailability() 
+#### checkTransferAvailability(domains) 
 
 [AUTO] Check Availability of Domain Transfer
 See: https://www.namesilo.com/api_reference.php#checkTransferAvailability
@@ -442,14 +495,19 @@ See: https://www.namesilo.com/api_reference.php#checkTransferAvailability
 
 
 
+##### Parameters
+
+| Name | Type | Description |  |
+| ---- | ---- | ----------- | -------- |
+| domains |  |  | &nbsp; |
+
+
 
 
 ##### Examples
 
 ```javascript
-let res = ns.checkTransferAvailability({
-  'domains': 'namesilo.com,namesilo.net,namesilo.org,namesilo.asia'
-})
+let res = await ns.checkTransferAvailability(namesilo.com,namesilo.net,namesilo.org,namesilo.asia)
 ```
 ```javascript
 // Output
@@ -485,7 +543,7 @@ let res = ns.checkTransferAvailability({
 
 
 
-#### getDomainInfo() 
+#### getDomainInfo(domain) 
 
 [AUTO] Get Domain Information
 See: https://www.namesilo.com/api_reference.php#getDomainInfo
@@ -493,14 +551,19 @@ See: https://www.namesilo.com/api_reference.php#getDomainInfo
 
 
 
+##### Parameters
+
+| Name | Type | Description |  |
+| ---- | ---- | ----------- | -------- |
+| domain |  |  | &nbsp; |
+
+
 
 
 ##### Examples
 
 ```javascript
-let res = ns.getDomainInfo({
-  'domain': 'namesilo.com'
-})
+let res = await ns.getDomainInfo(namesilo.com)
 ```
 ```javascript
 // Output
@@ -552,7 +615,7 @@ See: https://www.namesilo.com/api_reference.php#contactList
 ##### Examples
 
 ```javascript
-let res = ns.contactList({})
+let res = await ns.contactList()
 ```
 ```javascript
 // Output
@@ -631,7 +694,7 @@ See: https://www.namesilo.com/api_reference.php#contactAdd
 ##### Examples
 
 ```javascript
-let res = ns.contactAdd({
+let res = await ns.contactAdd({
   'fn': 'John',
   'ln': 'Smith',
   'ad': '123 N. 1st Street',
@@ -673,7 +736,7 @@ See: https://www.namesilo.com/api_reference.php#contactUpdate
 ##### Examples
 
 ```javascript
-let res = ns.contactUpdate({
+let res = await ns.contactUpdate({
   'contact_id': '111111',
   'fn': 'John',
   'ln': 'Smith',
@@ -702,7 +765,7 @@ let res = ns.contactUpdate({
 
 
 
-#### contactDelete() 
+#### contactDelete(contact_id) 
 
 [AUTO] Delete a contact profile
 See: https://www.namesilo.com/api_reference.php#contactDelete
@@ -710,14 +773,19 @@ See: https://www.namesilo.com/api_reference.php#contactDelete
 
 
 
+##### Parameters
+
+| Name | Type | Description |  |
+| ---- | ---- | ----------- | -------- |
+| contact_id |  |  | &nbsp; |
+
+
 
 
 ##### Examples
 
 ```javascript
-let res = ns.contactDelete({
-  'contact_id': '111111'
-})
+let res = await ns.contactDelete(111111)
 ```
 ```javascript
 // Output
@@ -748,7 +816,7 @@ See: https://www.namesilo.com/api_reference.php#contactDomainAssociate
 ##### Examples
 
 ```javascript
-let res = ns.contactDomainAssociate({
+let res = await ns.contactDomainAssociate({
   'domain': 'namesilo.com',
   'administrative': '11111',
   'technical': '222222'
@@ -770,42 +838,7 @@ let res = ns.contactDomainAssociate({
 
 
 
-#### changeNameServers() 
-
-[AUTO] Change NameServers
-See: https://www.namesilo.com/api_reference.php#changeNameServers
-
-
-
-
-
-
-##### Examples
-
-```javascript
-let res = ns.changeNameServers({
-  'domain': 'namesilo.com',
-  'ns1': 'NS1.NAMESILO.COM',
-  'ns2': 'NS2.NAMESILO.COM'
-})
-```
-```javascript
-// Output
-{
-  'code': 300,
-  'detail': 'success'
-}
-```
-
-
-##### Returns
-
-
-- `Void`
-
-
-
-#### dnsListRecords() 
+#### dnsListRecords(domain) 
 
 [AUTO] List Current DNS Records
 See: https://www.namesilo.com/api_reference.php#dnsListRecords
@@ -813,14 +846,19 @@ See: https://www.namesilo.com/api_reference.php#dnsListRecords
 
 
 
+##### Parameters
+
+| Name | Type | Description |  |
+| ---- | ---- | ----------- | -------- |
+| domain |  |  | &nbsp; |
+
+
 
 
 ##### Examples
 
 ```javascript
-let res = ns.dnsListRecords({
-  'domain': 'namesilo.com'
-})
+let res = await ns.dnsListRecords(namesilo.com)
 ```
 ```javascript
 // Output
@@ -885,7 +923,7 @@ See: https://www.namesilo.com/api_reference.php#dnsAddRecord
 ##### Examples
 
 ```javascript
-let res = ns.dnsAddRecord({
+let res = await ns.dnsAddRecord({
   'domain': 'namesilo.com',
   'rrtype': 'A',
   'rrhost': 'test',
@@ -923,7 +961,7 @@ See: https://www.namesilo.com/api_reference.php#dnsUpdateRecord
 ##### Examples
 
 ```javascript
-let res = ns.dnsUpdateRecord({
+let res = await ns.dnsUpdateRecord({
   'domain': 'namesilo.com',
   'rrid': '1a2b3',
   'rrhost': 'test',
@@ -961,7 +999,7 @@ See: https://www.namesilo.com/api_reference.php#dnsDeleteRecord
 ##### Examples
 
 ```javascript
-let res = ns.dnsDeleteRecord({
+let res = await ns.dnsDeleteRecord({
   'domain': 'namesilo.com',
   'rrid': '1a2b3'
 })
@@ -982,7 +1020,7 @@ let res = ns.dnsDeleteRecord({
 
 
 
-#### dnsSecListRecords() 
+#### dnsSecListRecords(domain) 
 
 [AUTO] List Current DS (DNSSEC) Records
 See: https://www.namesilo.com/api_reference.php#dnsSecListRecords
@@ -990,14 +1028,19 @@ See: https://www.namesilo.com/api_reference.php#dnsSecListRecords
 
 
 
+##### Parameters
+
+| Name | Type | Description |  |
+| ---- | ---- | ----------- | -------- |
+| domain |  |  | &nbsp; |
+
+
 
 
 ##### Examples
 
 ```javascript
-let res = ns.dnsSecListRecords({
-  'domain': 'namesilo.com'
-})
+let res = await ns.dnsSecListRecords(namesilo.com)
 ```
 ```javascript
 // Output
@@ -1042,7 +1085,7 @@ See: https://www.namesilo.com/api_reference.php#dnsSecAddRecord
 ##### Examples
 
 ```javascript
-let res = ns.dnsSecAddRecord({
+let res = await ns.dnsSecAddRecord({
   'domain': 'namesilo.com',
   'digest': '123456789',
   'keyTag': '123',
@@ -1079,7 +1122,7 @@ See: https://www.namesilo.com/api_reference.php#dnsSecDeleteRecord
 ##### Examples
 
 ```javascript
-let res = ns.dnsSecDeleteRecord({
+let res = await ns.dnsSecDeleteRecord({
   'domain': 'namesilo.com',
   'digest': '123456789',
   'keyTag': '123',
@@ -1116,7 +1159,7 @@ See: https://www.namesilo.com/api_reference.php#portfolioList
 ##### Examples
 
 ```javascript
-let res = ns.portfolioList({})
+let res = await ns.portfolioList()
 ```
 ```javascript
 // Output
@@ -1140,7 +1183,7 @@ let res = ns.portfolioList({})
 
 
 
-#### portfolioAdd() 
+#### portfolioAdd(portfolio) 
 
 [AUTO] Add a portfolio
 See: https://www.namesilo.com/api_reference.php#portfolioAdd
@@ -1148,14 +1191,19 @@ See: https://www.namesilo.com/api_reference.php#portfolioAdd
 
 
 
+##### Parameters
+
+| Name | Type | Description |  |
+| ---- | ---- | ----------- | -------- |
+| portfolio |  |  | &nbsp; |
+
+
 
 
 ##### Examples
 
 ```javascript
-let res = ns.portfolioAdd({
-  'portfolio': 'New Portfolio'
-})
+let res = await ns.portfolioAdd(New Portfolio)
 ```
 ```javascript
 // Output
@@ -1173,7 +1221,7 @@ let res = ns.portfolioAdd({
 
 
 
-#### portfolioDelete() 
+#### portfolioDelete(portfolio) 
 
 [AUTO] Delete a portfolio
 See: https://www.namesilo.com/api_reference.php#portfolioDelete
@@ -1181,14 +1229,19 @@ See: https://www.namesilo.com/api_reference.php#portfolioDelete
 
 
 
+##### Parameters
+
+| Name | Type | Description |  |
+| ---- | ---- | ----------- | -------- |
+| portfolio |  |  | &nbsp; |
+
+
 
 
 ##### Examples
 
 ```javascript
-let res = ns.portfolioDelete({
-  'portfolio': 'New Portfolio'
-})
+let res = await ns.portfolioDelete(New Portfolio)
 ```
 ```javascript
 // Output
@@ -1219,7 +1272,7 @@ See: https://www.namesilo.com/api_reference.php#portfolioDomainAssociate
 ##### Examples
 
 ```javascript
-let res = ns.portfolioDomainAssociate({
+let res = await ns.portfolioDomainAssociate({
   'portfolio': 'New Portfolio',
   'domains': 'namesilo.com,namesilo.net,namesilo.info'
 })
@@ -1241,7 +1294,7 @@ let res = ns.portfolioDomainAssociate({
 
 
 
-#### listRegisteredNameServers() 
+#### listRegisteredNameServers(domain) 
 
 [AUTO] List Registered NameServers
 See: https://www.namesilo.com/api_reference.php#listRegisteredNameServers
@@ -1249,14 +1302,19 @@ See: https://www.namesilo.com/api_reference.php#listRegisteredNameServers
 
 
 
+##### Parameters
+
+| Name | Type | Description |  |
+| ---- | ---- | ----------- | -------- |
+| domain |  |  | &nbsp; |
+
+
 
 
 ##### Examples
 
 ```javascript
-let res = ns.listRegisteredNameServers({
-  'domain': 'namesilo.com'
-})
+let res = await ns.listRegisteredNameServers(namesilo.com)
 ```
 ```javascript
 // Output
@@ -1302,7 +1360,7 @@ See: https://www.namesilo.com/api_reference.php#addRegisteredNameServer
 ##### Examples
 
 ```javascript
-let res = ns.addRegisteredNameServer({
+let res = await ns.addRegisteredNameServer({
   'domain': 'namesilo.com',
   'new_host': 'ns5',
   'ip1': '123.45.67.8',
@@ -1338,7 +1396,7 @@ See: https://www.namesilo.com/api_reference.php#modifyRegisteredNameServer
 ##### Examples
 
 ```javascript
-let res = ns.modifyRegisteredNameServer({
+let res = await ns.modifyRegisteredNameServer({
   'domain': 'namesilo.com',
   ' current_host': 'ns5',
   'new_host': 'ns5',
@@ -1375,7 +1433,7 @@ See: https://www.namesilo.com/api_reference.php#deleteRegisteredNameServer
 ##### Examples
 
 ```javascript
-let res = ns.deleteRegisteredNameServer({
+let res = await ns.deleteRegisteredNameServer({
   'domain': 'namesilo.com',
   ' current_host': 'ns5'
 })
@@ -1396,7 +1454,7 @@ let res = ns.deleteRegisteredNameServer({
 
 
 
-#### addPrivacy() 
+#### addPrivacy(domain) 
 
 [AUTO] Add WHOIS Privacy
 See: https://www.namesilo.com/api_reference.php#addPrivacy
@@ -1404,14 +1462,19 @@ See: https://www.namesilo.com/api_reference.php#addPrivacy
 
 
 
+##### Parameters
+
+| Name | Type | Description |  |
+| ---- | ---- | ----------- | -------- |
+| domain |  |  | &nbsp; |
+
+
 
 
 ##### Examples
 
 ```javascript
-let res = ns.addPrivacy({
-  'domain': 'namesilo.com'
-})
+let res = await ns.addPrivacy(namesilo.com)
 ```
 ```javascript
 // Output
@@ -1429,7 +1492,7 @@ let res = ns.addPrivacy({
 
 
 
-#### removePrivacy() 
+#### removePrivacy(domain) 
 
 [AUTO] Remove WHOIS Privacy
 See: https://www.namesilo.com/api_reference.php#removePrivacy
@@ -1437,14 +1500,19 @@ See: https://www.namesilo.com/api_reference.php#removePrivacy
 
 
 
+##### Parameters
+
+| Name | Type | Description |  |
+| ---- | ---- | ----------- | -------- |
+| domain |  |  | &nbsp; |
+
+
 
 
 ##### Examples
 
 ```javascript
-let res = ns.removePrivacy({
-  'domain': 'namesilo.com'
-})
+let res = await ns.removePrivacy(namesilo.com)
 ```
 ```javascript
 // Output
@@ -1462,7 +1530,7 @@ let res = ns.removePrivacy({
 
 
 
-#### addAutoRenewal() 
+#### addAutoRenewal(domain) 
 
 [AUTO] Add Auto-Renewal
 See: https://www.namesilo.com/api_reference.php#addAutoRenewal
@@ -1470,14 +1538,19 @@ See: https://www.namesilo.com/api_reference.php#addAutoRenewal
 
 
 
+##### Parameters
+
+| Name | Type | Description |  |
+| ---- | ---- | ----------- | -------- |
+| domain |  |  | &nbsp; |
+
+
 
 
 ##### Examples
 
 ```javascript
-let res = ns.addAutoRenewal({
-  'domain': 'namesilo.com'
-})
+let res = await ns.addAutoRenewal(namesilo.com)
 ```
 ```javascript
 // Output
@@ -1495,7 +1568,7 @@ let res = ns.addAutoRenewal({
 
 
 
-#### removeAutoRenewal() 
+#### removeAutoRenewal(domain) 
 
 [AUTO] Remove Auto-Renewal
 See: https://www.namesilo.com/api_reference.php#removeAutoRenewal
@@ -1503,14 +1576,19 @@ See: https://www.namesilo.com/api_reference.php#removeAutoRenewal
 
 
 
+##### Parameters
+
+| Name | Type | Description |  |
+| ---- | ---- | ----------- | -------- |
+| domain |  |  | &nbsp; |
+
+
 
 
 ##### Examples
 
 ```javascript
-let res = ns.removeAutoRenewal({
-  'domain': 'namesilo.com'
-})
+let res = await ns.removeAutoRenewal(namesilo.com)
 ```
 ```javascript
 // Output
@@ -1528,7 +1606,7 @@ let res = ns.removeAutoRenewal({
 
 
 
-#### retrieveAuthCode() 
+#### retrieveAuthCode(domain) 
 
 [AUTO] Retrieve EPP Code
 See: https://www.namesilo.com/api_reference.php#retrieveAuthCode
@@ -1536,14 +1614,19 @@ See: https://www.namesilo.com/api_reference.php#retrieveAuthCode
 
 
 
+##### Parameters
+
+| Name | Type | Description |  |
+| ---- | ---- | ----------- | -------- |
+| domain |  |  | &nbsp; |
+
+
 
 
 ##### Examples
 
 ```javascript
-let res = ns.retrieveAuthCode({
-  'domain': 'namesilo.com'
-})
+let res = await ns.retrieveAuthCode(namesilo.com)
 ```
 ```javascript
 // Output
@@ -1574,7 +1657,7 @@ See: https://www.namesilo.com/api_reference.php#domainForward
 ##### Examples
 
 ```javascript
-let res = ns.domainForward({
+let res = await ns.domainForward({
   'domain': 'namesilo.com',
   'protocol': 'http',
   'address': 'google.com',
@@ -1610,7 +1693,7 @@ See: https://www.namesilo.com/api_reference.php#domainForwardSubDomain
 ##### Examples
 
 ```javascript
-let res = ns.domainForwardSubDomain({
+let res = await ns.domainForwardSubDomain({
   'domain': 'namesilo.com',
   'sub_domain': 'test',
   'protocol': 'http',
@@ -1648,7 +1731,7 @@ See: https://www.namesilo.com/api_reference.php#domainForwardSubDomainDelete
 ##### Examples
 
 ```javascript
-let res = ns.domainForwardSubDomainDelete({
+let res = await ns.domainForwardSubDomainDelete({
   'domain': 'namesilo.com',
   'sub_domain': 'test'
 })
@@ -1669,7 +1752,7 @@ let res = ns.domainForwardSubDomainDelete({
 
 
 
-#### domainLock() 
+#### domainLock(domain) 
 
 [AUTO] Lock a Domain
 See: https://www.namesilo.com/api_reference.php#domainLock
@@ -1677,14 +1760,19 @@ See: https://www.namesilo.com/api_reference.php#domainLock
 
 
 
+##### Parameters
+
+| Name | Type | Description |  |
+| ---- | ---- | ----------- | -------- |
+| domain |  |  | &nbsp; |
+
+
 
 
 ##### Examples
 
 ```javascript
-let res = ns.domainLock({
-  'domain': 'namesilo.com'
-})
+let res = await ns.domainLock(namesilo.com)
 ```
 ```javascript
 // Output
@@ -1702,7 +1790,7 @@ let res = ns.domainLock({
 
 
 
-#### domainUnlock() 
+#### domainUnlock(domain) 
 
 [AUTO] Unlock a Domain
 See: https://www.namesilo.com/api_reference.php#domainUnlock
@@ -1710,14 +1798,19 @@ See: https://www.namesilo.com/api_reference.php#domainUnlock
 
 
 
+##### Parameters
+
+| Name | Type | Description |  |
+| ---- | ---- | ----------- | -------- |
+| domain |  |  | &nbsp; |
+
+
 
 
 ##### Examples
 
 ```javascript
-let res = ns.domainUnlock({
-  'domain': 'namesilo.com'
-})
+let res = await ns.domainUnlock(namesilo.com)
 ```
 ```javascript
 // Output
@@ -1735,7 +1828,7 @@ let res = ns.domainUnlock({
 
 
 
-#### listEmailForwards() 
+#### listEmailForwards(domain) 
 
 [AUTO] View the email forwards for your domain
 See: https://www.namesilo.com/api_reference.php#listEmailForwards
@@ -1743,14 +1836,19 @@ See: https://www.namesilo.com/api_reference.php#listEmailForwards
 
 
 
+##### Parameters
+
+| Name | Type | Description |  |
+| ---- | ---- | ----------- | -------- |
+| domain |  |  | &nbsp; |
+
+
 
 
 ##### Examples
 
 ```javascript
-let res = ns.listEmailForwards({
-  'domain': 'namesilo.com'
-})
+let res = await ns.listEmailForwards(namesilo.com)
 ```
 ```javascript
 // Output
@@ -1794,7 +1892,7 @@ See: https://www.namesilo.com/api_reference.php#configureEmailForward
 ##### Examples
 
 ```javascript
-let res = ns.configureEmailForward({
+let res = await ns.configureEmailForward({
   'domain': 'namesilo.com',
   'email': 'test',
   'forward1': 'test@test.com',
@@ -1831,7 +1929,7 @@ See: https://www.namesilo.com/api_reference.php#deleteEmailForward
 ##### Examples
 
 ```javascript
-let res = ns.deleteEmailForward({
+let res = await ns.deleteEmailForward({
   'domain': 'namesilo.com',
   'email': 'test'
 })
@@ -1866,7 +1964,7 @@ See: https://www.namesilo.com/api_reference.php#registrantVerificationStatus
 ##### Examples
 
 ```javascript
-let res = ns.registrantVerificationStatus({})
+let res = await ns.registrantVerificationStatus()
 ```
 ```javascript
 // Output
@@ -1896,7 +1994,7 @@ let res = ns.registrantVerificationStatus({})
 
 
 
-#### emailVerification() 
+#### emailVerification(email) 
 
 [AUTO] Verify a Registrant email address
 See: https://www.namesilo.com/api_reference.php#emailVerification
@@ -1904,14 +2002,19 @@ See: https://www.namesilo.com/api_reference.php#emailVerification
 
 
 
+##### Parameters
+
+| Name | Type | Description |  |
+| ---- | ---- | ----------- | -------- |
+| email |  |  | &nbsp; |
+
+
 
 
 ##### Examples
 
 ```javascript
-let res = ns.emailVerification({
-  'email': 'test@example.com'
-})
+let res = await ns.emailVerification(test@example.com)
 ```
 ```javascript
 // Output
@@ -1943,7 +2046,7 @@ See: https://www.namesilo.com/api_reference.php#getAccountBalance
 ##### Examples
 
 ```javascript
-let res = ns.getAccountBalance({})
+let res = await ns.getAccountBalance()
 ```
 ```javascript
 // Output
@@ -1975,7 +2078,7 @@ See: https://www.namesilo.com/api_reference.php#addAccountFunds
 ##### Examples
 
 ```javascript
-let res = ns.addAccountFunds({
+let res = await ns.addAccountFunds({
   'amount': '65.43',
   'payment_id': '123'
 })
@@ -2010,7 +2113,7 @@ See: https://www.namesilo.com/api_reference.php#marketplaceActiveSalesOverview
 ##### Examples
 
 ```javascript
-let res = ns.marketplaceActiveSalesOverview({})
+let res = await ns.marketplaceActiveSalesOverview()
 ```
 ```javascript
 // Output
@@ -2071,7 +2174,7 @@ See: https://www.namesilo.com/api_reference.php#marketplaceAddOrModifySale
 ##### Examples
 
 ```javascript
-let res = ns.marketplaceAddOrModifySale({
+let res = await ns.marketplaceAddOrModifySale({
   'domain': 'example.com',
   'action': 'add',
   'sale_type': 'auction',
@@ -2110,7 +2213,7 @@ See: https://www.namesilo.com/api_reference.php#marketplaceLandingPageUpdate
 ##### Examples
 
 ```javascript
-let res = ns.marketplaceLandingPageUpdate({
+let res = await ns.marketplaceLandingPageUpdate({
   'domain': 'example.com',
   'mp_template': '2',
   'mp_bgcolor': '000000'
@@ -2145,7 +2248,7 @@ See: https://www.namesilo.com/api_reference.php#getPrices
 ##### Examples
 
 ```javascript
-let res = ns.getPrices({})
+let res = await ns.getPrices()
 ```
 ```javascript
 // Output
@@ -2186,7 +2289,7 @@ See: https://www.namesilo.com/api_reference.php#listOrders
 ##### Examples
 
 ```javascript
-let res = ns.listOrders({})
+let res = await ns.listOrders()
 ```
 ```javascript
 // Output
@@ -2218,7 +2321,7 @@ let res = ns.listOrders({})
 
 
 
-#### orderDetails() 
+#### orderDetails(order_number) 
 
 [AUTO] View Details For Provided Order Number
 See: https://www.namesilo.com/api_reference.php#orderDetails
@@ -2226,14 +2329,19 @@ See: https://www.namesilo.com/api_reference.php#orderDetails
 
 
 
+##### Parameters
+
+| Name | Type | Description |  |
+| ---- | ---- | ----------- | -------- |
+| order_number |  |  | &nbsp; |
+
+
 
 
 ##### Examples
 
 ```javascript
-let res = ns.orderDetails({
-  'order_number': '77777'
-})
+let res = await ns.orderDetails(77777)
 ```
 ```javascript
 // Output
