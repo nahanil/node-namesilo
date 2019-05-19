@@ -6,18 +6,20 @@
   "scripts": {
     "test": "jest",
     "dev": "jest --watch",
-		"build": "npm test && npm run readme",
+    "build": "npm test && npm run readme",
     "coverage": "jest --coverage",
+    "coveralls": "npm run coverage && cat ./coverage/lcov.info | coveralls",
     "doc": "node ./.namesilo/doc.js && jsdoc index.js lib --ignore ./lib/utils.js",
     "readme": "node ./.namesilo/doc.js && cat .namesilo/README.md > README.md && doxdox -l markdown ./lib -i lib/utils.js >> README.md"
   },
-  "author": "",
+  "author": "Jarrod Linahan",
   "license": "ISC",
- "dependencies": {
+  "dependencies": {
     "axios": "^0.18.0",
     "xml2json": "^0.11.2"
   },
   "devDependencies": {
+    "coveralls": "^3.0.3",
     "doxdox": "^3.0.0",
     "jest": "^24.8.0"
   },
@@ -28,6 +30,5 @@
   "bugs": {
     "url": "https://github.com/texh/node-namesilo/issues"
   },
-  "homepage": "https://github.com/texh/node-namesilo",
-  "author": "Jarrod Linahan"
+  "homepage": "https://github.com/texh/node-namesilo"
 }

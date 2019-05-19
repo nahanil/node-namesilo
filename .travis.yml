@@ -22,8 +22,7 @@ branches:
     - master
 
 script:
-  - npm run coverage
-  - cat ./coverage/lcov.info | coveralls
+  - npm run coveralls
 
 notifications:
   email:
