@@ -6,6 +6,7 @@
   "scripts": {
     "test": "jest",
     "dev": "jest --watch",
+		"build": "npm test && npm run readme",
     "coverage": "jest --coverage",
     "doc": "node ./.namesilo/doc.js && jsdoc index.js lib --ignore ./lib/utils.js",
     "readme": "node ./.namesilo/doc.js && cat .namesilo/README.md > README.md && doxdox -l markdown ./lib -i lib/utils.js >> README.md"
