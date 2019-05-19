@@ -218,6 +218,15 @@ Renew a domain.
 ##### Examples
 
 ```javascript
+let res = await ns.renewDomain('example.com', 2)
+```
+```javascript
+let res = await ns.renewDomain('example.com', 2, { payment_id: 1234, coupon: 'abcd' })
+```
+```javascript
+let res = await ns.renewDomain({ domain: 'example.com', years: 2, payment_id: 1234 })
+```
+```javascript
 // Respone
 { code: 300,
   detail: 'success',
