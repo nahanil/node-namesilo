@@ -11,12 +11,14 @@ for (let action of actions) {
   let strParams = params ? JSON.stringify(params, null, 2).replace(/"/g, "'").replace(/^/gm, ' * ').replace(' *', '').trim() : ''
   let jsdocParams = ''
 
+  /*
   if (params) {
     jsdocParams = `\n * @param {Object} options\n`
     for (let key of Object.keys(params)) {
       jsdocParams += ` * @param {*} options.${key}\n`
     }
   }
+  */
 
   let ns = getMockClient(action)
   let exampleOut = JSON.stringify(await ns[action](params), null, 2).replace(/"/g, "'").replace(/^/gm, ' * ').replace(' *', '').trim()
