@@ -101,7 +101,6 @@ describe('NameSilo', () => {
       expect(ns.post).toHaveBeenCalledWith('changeNameServers', { domain: 'example.com', ns1: 'ns1.example.com', ns2: 'ns2.example.com' })
     })
 
-
     it(`should accept array of nameservers as second param`, async () => {
       let ns = getMockClient(('changeNameServers'))
       await ns.changeNameServers('example.com', ['ns1.example.com', 'ns2.example.com'])

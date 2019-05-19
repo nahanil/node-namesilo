@@ -21,6 +21,10 @@ branches:
   only:
     - master
 
+script:
+  - npm run coverage
+  - cat ./coverage/lcov.info | coveralls
+
 notifications:
   email:
     - jarrod@linahan.id.au
