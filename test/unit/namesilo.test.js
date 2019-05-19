@@ -111,6 +111,32 @@ describe('NameSilo', () => {
     })
   })
 
+  describe(`registerDomain`, () => {
+    it(`should accept serial arguments`, async () => {
+      let ns = getMockClient(('registerDomain'))
+      await ns.registerDomain('example.com', 1)
+
+      expect(ns.post).toHaveBeenCalledTimes(1)
+      expect(ns.post.mock.calls[0][1]).toEqual({ domain: 'example.com', years: 1 })
+    })
+
+    it(`should accept serial arguments with optional args`, async () => {
+      let ns = getMockClient(('registerDomain'))
+      await ns.registerDomain('example.com', 1, { payment_id: 1234, coupon: 'abcd' })
+
+      expect(ns.post).toHaveBeenCalledTimes(1)
+      expect(ns.post.mock.calls[0][1]).toEqual({ domain: 'example.com', years: 1, payment_id: 1234, coupon: 'abcd' })
+    })
+
+    it(`should accept a single argument object`, async () => {
+      let ns = getMockClient(('registerDomain'))
+      await ns.registerDomain({ domain: 'example.com', years: 1 })
+
+      expect(ns.post).toHaveBeenCalledTimes(1)
+      expect(ns.post.mock.calls[0][1]).toEqual({ domain: 'example.com', years: 1 })
+    })
+  })
+
   describe(`renewDomain`, () => {
     it(`should accept serial arguments`, async () => {
       let ns = getMockClient(('renewDomain'))

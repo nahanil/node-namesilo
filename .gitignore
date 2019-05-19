@@ -4,3 +4,4 @@ doc
 lib/xx_autogen.js
 nohup.out
 package-lock.json
+test/foo.js
