@@ -17,17 +17,20 @@ function getMockClient (fixture, options) {
   options.apiKey = options.apiKey || '123'
   options.sandbox = true
   let ns = new NameSilo(options)
+  let inTestSuite = typeof jest !== 'undefined'
+
+  const mockPost = (action, inputs) => {
+    return new Promise(async (resolve) => {
+      let data = await loadFixture(action)
+      resolve({ data })
+    })
+  }
 
   ns.setHTTPClient({
-    post: jest.fn().mockImplementation((action, inputs) => {
-      return new Promise(async (resolve) => {
-        let data = await loadFixture(action)
-        resolve({ data })
-      })
-    })
+    post: inTestSuite ? jest.fn().mockImplementation(mockPost) : mockPost
   })
 
-  ns.post = jest.fn().mockImplementation(ns.post)
+  ns.post = inTestSuite ? jest.fn().mockImplementation(ns.post) : ns.post
   return ns
 }
 

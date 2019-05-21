@@ -37,7 +37,6 @@ You can pass either an API Key as the only parameter, or an object with more ver
 | options.apiKey | `Boolean`  | API Key | &nbsp; |
 | options.sandbox&#x3D;false | `Boolean`  | Use sandbox/testing API | *Optional* |
 | options.logger | `Function`  |  | *Optional* |
-| options.defaultPaymentId | `Function`  | Default `payment_id` to use for API calls that require one | *Optional* |
 
 
 
@@ -211,9 +210,7 @@ See https://www.namesilo.com/api_reference.php#registerDomain
 | ---- | ---- | ----------- | -------- |
 | domain | `String` `Object`  | (String) The domain to register | (Object) Object containing all API options | &nbsp; |
 | years&#x3D;1 | `Number`  | The amount of years to register domain for | *Optional* |
-| options | `Object`  |  | *Optional* |
-| options.payment_id | `Number`  | The ID number for the verified credit card to use for the transaction. If you do not specify a payment_id, we will attempt to process the transaction using your account funds. | *Optional* |
-| options.coupon | `String`  | The coupon code to apply to this order | *Optional* |
+| options | `Object`  | See https://www.namesilo.com/api_reference.php#registerDomain | *Optional* |
 
 
 

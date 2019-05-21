@@ -2,7 +2,7 @@
 const utils = require('../../lib/utils')
 const { actions } = require('../../lib/constants')
 const NameSilo = require('../../lib/namesilo')
-const { getClient, getMockClient } = require('./test-util')
+const { getClient, getMockClient, loadFixture } = require('./test-util')
 
 describe('NameSilo', () => {
   it('should exist', () => {
@@ -26,10 +26,58 @@ describe('NameSilo', () => {
     expect(ns.config.sandbox).toBe(true)
   })
 
-  describe(`#post()`, () => {
+  describe(`post`, () => {
     xit (``, async () => {
     })
+
+    it('should map boolean `private`/`auto_renew` to 1/0', async () => {
+      let ns = getMockClient('registerDomain')
+      await ns.registerDomain('example.com', 1, { private: true, auto_renew: false })
+
+      expect(ns.axios.post).toHaveBeenCalledTimes(1)
+      expect(ns.axios.post).toHaveBeenCalledWith('registerDomain', 'private=1&auto_renew=0&domain=example.com&years=1')
+    })
+
+    it('should map boolean `private`/`auto_renew` to 1/0', async () => {
+      let ns = getMockClient('registerDomain')
+      await ns.registerDomain('example.com', 1, { private: false, auto_renew: true })
+
+      expect(ns.axios.post).toHaveBeenCalledTimes(1)
+      expect(ns.axios.post).toHaveBeenCalledWith('registerDomain', 'private=0&auto_renew=1&domain=example.com&years=1')
+    })
+
+    it('should attach `success` property to response', async () => {
+      let ns = getMockClient('listDomains')
+      let data = await ns.listDomains()
+
+      expect(!utils.isUndefined(data.success)).toBe(true)
+      expect(data.success).toBe(true)
+    })
+
+    it('should attach `failed` property to response', async () => {
+      let ns = getMockClient('listDomains')
+      let data = await ns.listDomains()
+
+      expect(!utils.isUndefined(data.failed)).toBe(true)
+      expect(data.failed).toBe(false)
+    })
+
+    it('should not attach `raw` property to response if not debug mode', async () => {
+      let ns = getMockClient('listDomains')
+      let data = await ns.listDomains()
+
+      expect(utils.isUndefined(data.raw)).toBe(true)
+    })
+
+    it('should attach `raw` property to response if debug mode', async () => {
+      let ns = getMockClient('listDomains', { debug: true })
+      let data = await ns.listDomains()
+
+      expect(!utils.isUndefined(data.raw)).toBe(true)
+      expect(data.raw).toBe((await loadFixture('listDomains')))
+    })
   })
+
 
   describe(`Generic endpoint methods`, () => {
     it(`should have ${Object.keys(actions).length} expected dynamically created endpoint methods`, () => {
