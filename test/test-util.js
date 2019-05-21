@@ -2,14 +2,24 @@
 const fs = require('fs')
 const path = require('path')
 
-const NameSilo = require('../../lib/namesilo')
-const fixtures = require('../fixtures/all.js')
+const NameSilo = require('../lib/namesilo')
+const fixtures = require('./fixtures/all.js')
 
-function getClient () {
-  return new NameSilo({
-    apiKey: 'abc123',
-    sandbox: true
-  })
+/**
+ * Get sandbox client
+ * @returns NameSilo
+ */
+function getClient (options) {
+  let ns = new NameSilo(Object.assign({}, options, {
+    apiKey: process.env.NAMESILO_SANDBOX_KEY || 'abc123',
+    sandbox: true,
+    // debug: true
+  }))
+
+  ns.axios.post = jest.fn().mockImplementation(ns.axios.post)
+  ns.post = jest.fn().mockImplementation(ns.post)
+
+  return ns
 }
 
 function getMockClient (fixture, options) {
@@ -21,7 +31,7 @@ function getMockClient (fixture, options) {
 
   const mockPost = (action, inputs) => {
     return new Promise(async (resolve) => {
-      let data = await loadFixture(action)
+      let data = await loadFixture(fixture || action)
       resolve({ data })
     })
   }
@@ -36,7 +46,7 @@ function getMockClient (fixture, options) {
 
 async function loadFixture (name) {
   return new Promise((resolve, reject) => {
-    fs.readFile(path.join(__dirname, `/../fixtures/${name}.xml`), 'utf8', (err, data) => {
+    fs.readFile(path.join(__dirname, `./fixtures/${name}.xml`), 'utf8', (err, data) => {
       if (err) {
         return resolve(fixtures[name] ? fixtures[name].sampleResponse : '')
       }

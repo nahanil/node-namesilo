@@ -2,7 +2,7 @@
 const utils = require('../../lib/utils')
 const { actions } = require('../../lib/constants')
 const NameSilo = require('../../lib/namesilo')
-const { getClient, getMockClient, loadFixture } = require('./test-util')
+const { getClient, getMockClient, loadFixture } = require('../test-util')
 
 describe('NameSilo', () => {
   it('should exist', () => {
@@ -168,10 +168,18 @@ describe('NameSilo', () => {
 
     it(`should accept an array as input`, async () => {
       let ns = getMockClient('checkRegisterAvailability')
-      await ns.checkRegisterAvailability(['example.com', 'example.net'])
-
+      let data = await ns.checkRegisterAvailability(['example.com', 'example.net'])
       expect(ns.post).toHaveBeenCalledTimes(1)
       expect(ns.post.mock.calls[0][1]).toEqual({ domains: 'example.com,example.net' })
+    })
+
+
+    it(`should handle responses without pricing information`, async () => {
+      let ns = getMockClient('checkRegisterAvailability_2')
+      let data = await ns.checkRegisterAvailability(['example.com', 'example.net'])
+      expect(data.success).toBe(true)
+      expect(utils.isArray(data.available)).toBe(true)
+      expect(utils.isObject(data.available[0])).toBe(true)
     })
   })
 
