@@ -27,10 +27,7 @@ describe('NameSilo', () => {
   })
 
   describe(`#post()`, () => {
-    it (`should be a function`, async () => {
-      let ns = getMockClient()
-      let data = await ns.listDomains()
-      console.log('got data', data)
+    xit (``, async () => {
     })
   })
 
