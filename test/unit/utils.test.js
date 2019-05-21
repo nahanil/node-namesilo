@@ -61,6 +61,12 @@ let expectations = {
     ['should be true given async arrow function', async () => {}, true],
   ],
 
+  isBoolean: [
+    ['it should return true given `true`', true, true],
+    ['it should return true given `false`', false, true],
+    ['it should return false given string', 'foo', false],
+  ],
+
   forEach: [],
   merge: [],
   extend: [],
