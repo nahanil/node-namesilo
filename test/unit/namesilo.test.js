@@ -15,6 +15,17 @@ describe('NameSilo', () => {
     }).toThrow()
   })
 
+  it ('accept a single string given to constructor', () => {
+    let ns = new NameSilo('abc123')
+    expect(ns.config.apiKey).toBe('abc123')
+  })
+
+  it ('accept a dictionary of options given to constructor', () => {
+    let ns = new NameSilo({ apiKey: 'abc123', sandbox: true })
+    expect(ns.config.apiKey).toBe('abc123')
+    expect(ns.config.sandbox).toBe(true)
+  })
+
   describe(`Generic endpoint methods`, () => {
     it(`should have ${Object.keys(actions).length} expected dynamically created endpoint methods`, () => {
       let ns = getClient()
