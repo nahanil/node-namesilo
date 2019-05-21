@@ -2,7 +2,7 @@ const fs = require('fs')
 const path = require('path')
 const { actions } = require('../lib/constants')
 const fixtures = require('../test/fixtures/all')
-const { getMockClient } = require('../test/unit/test-util')
+const { getMockClient } = require('../test/test-util')
 
 async function go() {
 let out = ''

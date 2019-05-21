@@ -229,7 +229,7 @@ let res = await ns.registerDomain('example.com', 2, { private: true })
 
 
 
-#### renewDomain(domain, years[, options]) 
+#### renewDomain(domain[, years&#x3D;1, options]) 
 
 Renew a domain.
 See https://www.namesilo.com/api_reference.php#renewDomain
@@ -242,7 +242,7 @@ See https://www.namesilo.com/api_reference.php#renewDomain
 | Name | Type | Description |  |
 | ---- | ---- | ----------- | -------- |
 | domain | `String` `Object`  | (String) The domain to renew | (Object) Object containing all API options | &nbsp; |
-| years | `Number`  | The amount of years to renew domain for | &nbsp; |
+| years&#x3D;1 | `Number`  | The amount of years to renew domain for | *Optional* |
 | options | `Object`  |  | *Optional* |
 | options.payment_id | `Number`  | The ID number for the verified credit card to use for the transaction. If you do not specify a payment_id, we will attempt to process the transaction using your account funds. | *Optional* |
 | options.coupon | `String`  | The coupon code to apply to this order | *Optional* |
