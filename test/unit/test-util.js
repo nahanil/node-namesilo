@@ -17,28 +17,37 @@ function getClient () {
 function getMockClient (fixture, options) {
   options = options || {}
   options.apiKey = options.apiKey || '123'
-  options.sandbox = typeof options.sandbox !== 'undefined' ? options.sandbox : true
+  options.sandbox = true // typeof options.sandbox !== 'undefined' ? options.sandbox : true
   let ns = new NameSilo(options)
 
-  let mockPost = async (action, inputs, parser) => {
-    let xml = await loadFixture(fixture)
-    // console.log('using xml response', xml)
-    let response = parseResponse(xml)
-    if (utils.isFunction(inputs)) {
-      return inputs(response)
-    }
+  ns.setHTTPClient({
+    post: jest.fn().mockImplementation((action, inputs) => {
+      return new Promise(async (resolve) => {
+        let data = await loadFixture(action)
+        resolve({ data })
+      })
+    })
+  })
 
-    if (utils.isFunction(parser)) {
-      return parser(response)
-    }
-    return response
-  }
+  // let mockPost = async (action, inputs, parser) => {
+  //   let xml = await loadFixture(fixture)
+  //   // console.log('using xml response', xml)
+  //   let response = parseResponse(xml)
+  //   if (utils.isFunction(inputs)) {
+  //     return inputs(response)
+  //   }
+
+  //   if (utils.isFunction(parser)) {
+  //     return parser(response)
+  //   }
+  //   return response
+  // }
 
   if (typeof jest === 'undefined') {
-    ns.post = mockPost
+    ns.post = () => {}
     return ns
   } else {
-    ns.post = jest.fn().mockImplementation(mockPost)
+    ns.post = jest.fn().mockImplementation(ns.post)
   }
 
   return ns

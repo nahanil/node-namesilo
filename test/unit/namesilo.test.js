@@ -26,6 +26,14 @@ describe('NameSilo', () => {
     expect(ns.config.sandbox).toBe(true)
   })
 
+  describe(`#post()`, () => {
+    it (`should be a function`, async () => {
+      let ns = getMockClient()
+      let data = await ns.listDomains()
+      console.log('got data', data)
+    })
+  })
+
   describe(`Generic endpoint methods`, () => {
     it(`should have ${Object.keys(actions).length} expected dynamically created endpoint methods`, () => {
       let ns = getClient()
