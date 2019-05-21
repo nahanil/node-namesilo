@@ -1,6 +1,6 @@
 /* eslint-disable no-undef */
 const utils = require('../../lib/utils')
-const { loadFixture } = require('./test-util')
+const { loadFixture } = require('../test-util')
 
 const parseResponse = require('../../lib/parse-response')
 
@@ -25,18 +25,14 @@ describe('XML Response Parser', () => {
     expect(data.detail).toBe('success')
   })
 
-  it('should throw an error if given invalid XML', () => {
-    expect(() => {
-      let data = parseResponse('{this: "is not xml"}')
-      console.log('PARSED RESOPONSE!?!?!??!?!', data)
-    }).toThrow()
+  it('should return error response if given invalid XML', () => {
+    let data = parseResponse('{this: "is not xml"}')
+    expect(data.code).toBe(-1)
   })
 
-  it('should throw an error if no namesilo reply exists', () => {
-    expect(() => {
-      let data = parseResponse('<namesilo></namesilo>')
-      console.log('PARSED RESOPONSE!?!?!??!?!', data)
-    }).toThrow()
+  it('should return error response if no namesilo reply exists', () => {
+    let data = parseResponse('<namesilo></namesilo>')
+    expect(data.code).toBe(-1)
   })
 
   it('should flatten "hosts" array (listRegisteredNameServers)', async () => {
