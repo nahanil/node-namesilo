@@ -14,7 +14,7 @@ Some methods have been 'fluffed out' to be more idiomatic in JS land, some are s
 - [ ] Should probably bring in eslint
 - [x] Coverage reporting
 
-# [@nahanil/namesilo](https://github.com/texh/node-namesilo) *0.0.1*
+# [@nahanil/namesilo](https://github.com/texh/node-namesilo) *0.0.3*
 
 > Interact with the NameSilo API
 
@@ -36,6 +36,7 @@ You can pass either an API Key as the only parameter, or an object with more ver
 | options | `String` `Object`  | (String) API Key | (Object) Configuration options | &nbsp; |
 | options.apiKey | `Boolean`  | API Key | &nbsp; |
 | options.sandbox&#x3D;false | `Boolean`  | Use sandbox/testing API | *Optional* |
+| options.batch&#x3D;false | `Boolean`  | Use Batch API | *Optional* |
 | options.logger | `Function`  |  | *Optional* |
 
 
@@ -53,7 +54,8 @@ ns = new NameSilo(API_KEY)
 // With sandbox/test mode enabled
 ns = new NameSilo({
   apiKey: API_KEY,
-  sandbox: true
+  sandbox: true,
+  batch: false,
 })
 ```
 
