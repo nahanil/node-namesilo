@@ -25,11 +25,37 @@ describe('NameSilo', () => {
     expect(ns.config.apiKey).toBe('abc123')
     expect(ns.config.sandbox).toBe(true)
   })
+  
+  describe('API Options', () => {
+    it('should use live API as default', () => {
+      let ns = new NameSilo({ apiKey: 'abc123' })
+      expect(ns.axios.defaults.baseURL).toBe('https://www.namesilo.com/api')
+    })
+    
+    it('should live API if sandbox:false', () => {
+      let ns = new NameSilo({ apiKey: 'abc123', sandbox: false })
+      expect(ns.axios.defaults.baseURL).toBe('https://www.namesilo.com/api')
+    })
+    
+    it('should use sandbox API if specified', () => {
+      let ns = new NameSilo({ apiKey: 'abc123', sandbox: true })
+      expect(ns.axios.defaults.baseURL).toBe('https://sandbox.namesilo.com/api')
+    })
+})
+
+  describe('Batch API', () => {
+    it('should batch API if requested', () => {
+      let ns = new NameSilo({ apiKey: 'abc123', batch: true })
+      expect(ns.axios.defaults.baseURL).toBe('https://www.namesilo.com/apibatch')
+    })
+    
+    it('should use batch sandbox API if specified', () => {
+      let ns = new NameSilo({ apiKey: 'abc123', batch: true, sandbox: true })
+      expect(ns.axios.defaults.baseURL).toBe('https://sandbox.namesilo.com/apibatch')
+    })
+  })
 
   describe(`post`, () => {
-    xit (``, async () => {
-    })
-
     it('should map boolean `private`/`auto_renew` to 1/0', async () => {
       let ns = getMockClient('registerDomain')
       await ns.registerDomain('example.com', 1, { private: true, auto_renew: false })
