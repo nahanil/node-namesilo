@@ -1,8 +1,6 @@
 > WIP - Wouldn't use this in production
 
 [![npm version](https://badge.fury.io/js/%40nahanil%2Fnamesilo.svg)](https://badge.fury.io/js/%40nahanil%2Fnamesilo)
-[![Build Status](https://travis-ci.org/texh/node-namesilo.svg?branch=master)](https://travis-ci.org/texh/node-namesilo)
-[![Coverage Status](https://coveralls.io/repos/github/texh/node-namesilo/badge.svg?branch=master)](https://coveralls.io/github/texh/node-namesilo?branch=master)
 
 Wrappers for all NameSilo API calls.
 
@@ -14,272 +12,9 @@ Some methods have been 'fluffed out' to be more idiomatic in JS land, some are s
 - [ ] Should probably bring in eslint
 - [x] Coverage reporting
 
-# [@nahanil/namesilo](https://github.com/texh/node-namesilo) *0.0.3*
+# [@nahanil/namesilo](https://github.com/nahanil/node-namesilo) *0.0.4*
 
 > Interact with the NameSilo API
-
-
-
-
-#### new NameSilo(options) 
-
-Interact with the NameSilo API
-You can pass either an API Key as the only parameter, or an object with more verbose configuration options.
-
-
-
-
-##### Parameters
-
-| Name | Type | Description |  |
-| ---- | ---- | ----------- | -------- |
-| options | `String` `Object`  | (String) API Key | (Object) Configuration options | &nbsp; |
-| options.apiKey | `Boolean`  | API Key | &nbsp; |
-| options.sandbox&#x3D;false | `Boolean`  | Use sandbox/testing API | *Optional* |
-| options.batch&#x3D;false | `Boolean`  | Use Batch API | *Optional* |
-| options.logger | `Function`  |  | *Optional* |
-
-
-
-
-##### Examples
-
-```javascript
-const API_KEY = '1234567890'
-
-NameSilo = require('namesilo')
-ns = new NameSilo(API_KEY)
-```
-```javascript
-// With sandbox/test mode enabled
-ns = new NameSilo({
-  apiKey: API_KEY,
-  sandbox: true,
-  batch: false,
-})
-```
-
-
-##### Returns
-
-
-- `Void`
-
-
-
-#### checkRegisterAvailability(domains) 
-
-Determine if you can register the specified domains.
-See: https://www.namesilo.com/api_reference.php#checkRegisterAvailability
-
-
-
-
-##### Parameters
-
-| Name | Type | Description |  |
-| ---- | ---- | ----------- | -------- |
-| domains | `Array` `String`  | Domain(s) to check | &nbsp; |
-
-
-
-
-##### Examples
-
-```javascript
-let res = await ns.checkRegisterAvailability('namesilo.com')
-```
-```javascript
-let res = await ns.checkRegisterAvailability('namesilo.com,namesilo.net,n#mesilo.org')
-```
-```javascript
-let res = await ns.checkRegisterAvailability(['namesilo.com' , 'namesilo.net' , 'n#mesilo.org'])
-```
-```javascript
-// Output
-{
-  "code": 300,
-  "detail": "success",
-  "available": [
-      {
-          "price": 9.99,
-          "domain": "namesilo.com"
-      }
-  ],
-  "unavailable": [
-      "namesilo.net"
-  ],
-  "invalid": [
-      "n#mesilo.com"
-  ]
-}
-```
-
-
-##### Returns
-
-
-- `Promise`  API Reply
-
-
-
-#### changeNameServers(domain, nameservers) 
-
-Change the name servers associated with the provided domain name. You must provide between 2 and 13 name servers in order for this operation to be successful.
-See https://www.namesilo.com/api_reference.php#changeNameServers
-
-
-
-
-##### Parameters
-
-| Name | Type | Description |  |
-| ---- | ---- | ----------- | -------- |
-| domain | `String` `Object`  | Domain name to modify | &nbsp; |
-| nameservers | `Array` `Undefined`  | Nameservers to set for domain | &nbsp; |
-
-
-
-
-##### Examples
-
-```javascript
-let res = await ns.changeNameServers('namesilo.com', ['ns1.namesilo.com', 'ns2.namesilo.com'])
-```
-```javascript
-let res = await ns.changeNameServers({ domain: 'namesilo.com', ns1: 'ns1.namesilo.com', ns2: 'ns2.namesilo.com' })
-```
-```javascript
-// Output
-{ code: 300, detail: 'success' }
-```
-
-
-##### Returns
-
-
-- `Promise`  API Reply
-
-
-
-#### listDomains() 
-
-Get a list of all active domains within your account.
-See https://www.namesilo.com/api_reference.php#listDomains
-
-
-
-
-
-
-##### Examples
-
-```javascript
-let res = ns.listDomains()
-```
-```javascript
-// Output
-{
-  'code': 300,
-  'detail': 'success',
-  'domains': [
-    'namesilo.com',
-    'namesilo.net',
-    'namesilo.org'
-  ]
-}
-```
-
-
-##### Returns
-
-
-- `Promise`  API Reply
-
-
-
-#### registerDomain(domain[, years&#x3D;1, options]) 
-
-Register a domain.
-See https://www.namesilo.com/api_reference.php#registerDomain
-
-
-
-
-##### Parameters
-
-| Name | Type | Description |  |
-| ---- | ---- | ----------- | -------- |
-| domain | `String` `Object`  | (String) The domain to register | (Object) Object containing all API options | &nbsp; |
-| years&#x3D;1 | `Number`  | The amount of years to register domain for | *Optional* |
-| options | `Object`  | See https://www.namesilo.com/api_reference.php#registerDomain | *Optional* |
-
-
-
-
-##### Examples
-
-```javascript
-let res = await ns.registerDomain('example.com', 2, { private: true })
-```
-
-
-##### Returns
-
-
-- `Promise`  API Reply
-
-
-
-#### renewDomain(domain[, years&#x3D;1, options]) 
-
-Renew a domain.
-See https://www.namesilo.com/api_reference.php#renewDomain
-
-
-
-
-##### Parameters
-
-| Name | Type | Description |  |
-| ---- | ---- | ----------- | -------- |
-| domain | `String` `Object`  | (String) The domain to renew | (Object) Object containing all API options | &nbsp; |
-| years&#x3D;1 | `Number`  | The amount of years to renew domain for | *Optional* |
-| options | `Object`  |  | *Optional* |
-| options.payment_id | `Number`  | The ID number for the verified credit card to use for the transaction. If you do not specify a payment_id, we will attempt to process the transaction using your account funds. | *Optional* |
-| options.coupon | `String`  | The coupon code to apply to this order | *Optional* |
-
-
-
-
-##### Examples
-
-```javascript
-let res = await ns.renewDomain('example.com', 2)
-```
-```javascript
-let res = await ns.renewDomain('example.com', 2, { payment_id: 1234, coupon: 'abcd' })
-```
-```javascript
-let res = await ns.renewDomain({ domain: 'example.com', years: 2, payment_id: 1234 })
-```
-```javascript
-// Response
-{ code: 300,
-  detail: 'success',
-  message: 'Your domain renewal was successfully processed.',
-  domain: 'namesilo.com',
-  order_amount: 7.77
-}
-```
-
-
-##### Returns
-
-
-- `Promise`  API Reply
-
-
 
 
 ## Autogenerated Methods
@@ -2404,6 +2139,269 @@ let res = await ns.orderDetails('77777')
 
 
 - `Void`
+
+
+
+
+
+
+#### new NameSilo(options) 
+
+Interact with the NameSilo API
+You can pass either an API Key as the only parameter, or an object with more verbose configuration options.
+
+
+
+
+##### Parameters
+
+| Name | Type | Description |  |
+| ---- | ---- | ----------- | -------- |
+| options | `String` `Object`  | (String) API Key | (Object) Configuration options | &nbsp; |
+| options.apiKey | `Boolean`  | API Key | &nbsp; |
+| options.sandbox&#x3D;false | `Boolean`  | Use sandbox/testing API | *Optional* |
+| options.batch&#x3D;false | `Boolean`  | Use Batch API | *Optional* |
+| options.logger | `Function`  |  | *Optional* |
+
+
+
+
+##### Examples
+
+```javascript
+const API_KEY = '1234567890'
+
+NameSilo = require('namesilo')
+ns = new NameSilo(API_KEY)
+```
+```javascript
+// With sandbox/test mode enabled
+ns = new NameSilo({
+  apiKey: API_KEY,
+  sandbox: true,
+  batch: false,
+})
+```
+
+
+##### Returns
+
+
+- `Void`
+
+
+
+#### checkRegisterAvailability(domains) 
+
+Determine if you can register the specified domains.
+See: https://www.namesilo.com/api_reference.php#checkRegisterAvailability
+
+
+
+
+##### Parameters
+
+| Name | Type | Description |  |
+| ---- | ---- | ----------- | -------- |
+| domains | `Array` `String`  | Domain(s) to check | &nbsp; |
+
+
+
+
+##### Examples
+
+```javascript
+let res = await ns.checkRegisterAvailability('namesilo.com')
+```
+```javascript
+let res = await ns.checkRegisterAvailability('namesilo.com,namesilo.net,n#mesilo.org')
+```
+```javascript
+let res = await ns.checkRegisterAvailability(['namesilo.com' , 'namesilo.net' , 'n#mesilo.org'])
+```
+```javascript
+// Output
+{
+  "code": 300,
+  "detail": "success",
+  "available": [
+      {
+          "price": 9.99,
+          "domain": "namesilo.com"
+      }
+  ],
+  "unavailable": [
+      "namesilo.net"
+  ],
+  "invalid": [
+      "n#mesilo.com"
+  ]
+}
+```
+
+
+##### Returns
+
+
+- `Promise`  API Reply
+
+
+
+#### changeNameServers(domain, nameservers) 
+
+Change the name servers associated with the provided domain name. You must provide between 2 and 13 name servers in order for this operation to be successful.
+See https://www.namesilo.com/api_reference.php#changeNameServers
+
+
+
+
+##### Parameters
+
+| Name | Type | Description |  |
+| ---- | ---- | ----------- | -------- |
+| domain | `String` `Object`  | Domain name to modify | &nbsp; |
+| nameservers | `Array` `Undefined`  | Nameservers to set for domain | &nbsp; |
+
+
+
+
+##### Examples
+
+```javascript
+let res = await ns.changeNameServers('namesilo.com', ['ns1.namesilo.com', 'ns2.namesilo.com'])
+```
+```javascript
+let res = await ns.changeNameServers({ domain: 'namesilo.com', ns1: 'ns1.namesilo.com', ns2: 'ns2.namesilo.com' })
+```
+```javascript
+// Output
+{ code: 300, detail: 'success' }
+```
+
+
+##### Returns
+
+
+- `Promise`  API Reply
+
+
+
+#### listDomains() 
+
+Get a list of all active domains within your account.
+See https://www.namesilo.com/api_reference.php#listDomains
+
+
+
+
+
+
+##### Examples
+
+```javascript
+let res = ns.listDomains()
+```
+```javascript
+// Output
+{
+  'code': 300,
+  'detail': 'success',
+  'domains': [
+    'namesilo.com',
+    'namesilo.net',
+    'namesilo.org'
+  ]
+}
+```
+
+
+##### Returns
+
+
+- `Promise`  API Reply
+
+
+
+#### registerDomain(domain[, years&#x3D;1, options]) 
+
+Register a domain.
+See https://www.namesilo.com/api_reference.php#registerDomain
+
+
+
+
+##### Parameters
+
+| Name | Type | Description |  |
+| ---- | ---- | ----------- | -------- |
+| domain | `String` `Object`  | (String) The domain to register | (Object) Object containing all API options | &nbsp; |
+| years&#x3D;1 | `Number`  | The amount of years to register domain for | *Optional* |
+| options | `Object`  | See https://www.namesilo.com/api_reference.php#registerDomain | *Optional* |
+
+
+
+
+##### Examples
+
+```javascript
+let res = await ns.registerDomain('example.com', 2, { private: true })
+```
+
+
+##### Returns
+
+
+- `Promise`  API Reply
+
+
+
+#### renewDomain(domain[, years&#x3D;1, options]) 
+
+Renew a domain.
+See https://www.namesilo.com/api_reference.php#renewDomain
+
+
+
+
+##### Parameters
+
+| Name | Type | Description |  |
+| ---- | ---- | ----------- | -------- |
+| domain | `String` `Object`  | (String) The domain to renew | (Object) Object containing all API options | &nbsp; |
+| years&#x3D;1 | `Number`  | The amount of years to renew domain for | *Optional* |
+| options | `Object`  |  | *Optional* |
+| options.payment_id | `Number`  | The ID number for the verified credit card to use for the transaction. If you do not specify a payment_id, we will attempt to process the transaction using your account funds. | *Optional* |
+| options.coupon | `String`  | The coupon code to apply to this order | *Optional* |
+
+
+
+
+##### Examples
+
+```javascript
+let res = await ns.renewDomain('example.com', 2)
+```
+```javascript
+let res = await ns.renewDomain('example.com', 2, { payment_id: 1234, coupon: 'abcd' })
+```
+```javascript
+let res = await ns.renewDomain({ domain: 'example.com', years: 2, payment_id: 1234 })
+```
+```javascript
+// Response
+{ code: 300,
+  detail: 'success',
+  message: 'Your domain renewal was successfully processed.',
+  domain: 'namesilo.com',
+  order_amount: 7.77
+}
+```
+
+
+##### Returns
+
+
+- `Promise`  API Reply
 
 
 

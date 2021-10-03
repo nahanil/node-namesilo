@@ -1,6 +1,6 @@
 {
   "name": "@nahanil/namesilo",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Interact with the NameSilo API",
   "main": "index.js",
   "scripts": {
@@ -28,10 +28,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/texh/node-namesilo.git"
+    "url": "git://github.com/nahanil/node-namesilo.git"
   },
   "bugs": {
-    "url": "https://github.com/texh/node-namesilo/issues"
+    "url": "https://github.com/nahanil/node-namesilo/issues"
   },
-  "homepage": "https://github.com/texh/node-namesilo"
+  "homepage": "https://github.com/nahanil/node-namesilo"
 }
